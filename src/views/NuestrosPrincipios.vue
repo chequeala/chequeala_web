@@ -3,7 +3,7 @@
   <div class="container-fluid green-section py-5">
     <div class="container">
       <div class="card">
-        <div class="card-body p-5">
+        <div class="card-body p-md-5">
           <h1 class="bd-title mb-0">Nuestros Principios</h1>
           <p class="bd-lead">
             En Chequea.la, nuestra misión es clara: somos una línea de ayuda dedicada a atender
