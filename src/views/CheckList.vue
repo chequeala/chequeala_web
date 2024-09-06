@@ -3,23 +3,37 @@
     <div class="container" id="checklist-container">
       <h1 class="text-center mb-4">Checklist de Seguridad Web</h1>
 
-      <!-- Botón para exportar PDF -->
-      <div class="text-center mb-4">
-        <button class="btn btn-primary" @click="exportarPDF">
-          Exportar PDF de Tareas Pendientes
+      <!-- Contenedor para el botón de exportar y el switch -->
+      <div class="d-flex justify-content-between mb-4">
+        <!-- Botón para exportar PDF -->
+        <button class="btn btn-light btn-sm d-flex align-items-center" @click="exportarPDF">
+          <i class="bi bi-file-earmark-pdf me-2"></i> Exportar PDF
         </button>
+
+        <!-- Checkbox para mostrar recomendaciones de WordPress -->
+        <div class="form-check form-switch">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="wordpressSwitch"
+            v-model="mostrarWordpressTareas"
+            @change="saveTareasToLocalStorage"
+          />
+          <label class="form-check-label" for="wordpressSwitch">
+            Mostrar Recomendaciones de Seguridad para WordPress
+          </label>
+        </div>
       </div>
 
       <!-- Tarjetas con las Tareas -->
       <div class="row">
         <div v-for="tarea in tareasOrdenadas" :key="tarea.id" class="col-md-6 mb-3">
           <div
-            class="card"
-            :class="{
-              'bg-light': tarea.completada,
-              'border-secondary': tarea.completada,
-              'border-2': !tarea.completada
-            }"
+            :class="[
+              'card',
+              tarea.id > 10 ? 'wp-card' : '',
+              tarea.completada ? 'bg-light border-secondary' : 'border-2'
+            ]"
           >
             <div class="card-body">
               <div class="d-flex align-items-center mb-3">
@@ -39,6 +53,10 @@
                     {{ tarea.titulo }}
                   </span>
                 </label>
+                <!-- Ícono para tareas de WordPress, movido a la derecha -->
+                <div v-if="tarea.id > 10" class="wp-icon-container ms-auto">
+                  <i class="bi bi-wordpress wp-icon"></i>
+                </div>
               </div>
               <p class="card-text" :class="{ 'text-muted': tarea.completada }">
                 {{ tarea.descripcion }}
@@ -56,25 +74,21 @@
                 :class="{ show: tarea.mostrarContenido }"
               >
                 <div class="card card-body">
-                  <p>Más información adicional sobre la tarea.</p>
-                  <h6>3 Tips:</h6>
-                  <ul>
-                    <li>Tip 1: Realiza esta acción primero.</li>
-                    <li>Tip 2: No olvides verificar esto.</li>
-                    <li>Tip 3: Consulta esta fuente para más detalles.</li>
-                  </ul>
-                  <h6>3 Enlaces Externos:</h6>
-                  <ul>
-                    <li>
-                      <a href="https://example.com/link1" target="_blank">Enlace Externo 1</a>
-                    </li>
-                    <li>
-                      <a href="https://example.com/link2" target="_blank">Enlace Externo 2</a>
-                    </li>
-                    <li>
-                      <a href="https://example.com/link3" target="_blank">Enlace Externo 3</a>
-                    </li>
-                  </ul>
+                  <div v-if="tarea.materialReferencia">
+                    <h6>Material de Referencia:</h6>
+                    <p>{{ tarea.materialReferencia.descripcion }}</p>
+                    <ul>
+                      <li v-for="(tip, index) in tarea.materialReferencia.tips" :key="index">
+                        {{ tip }}
+                      </li>
+                    </ul>
+                    <h6>Enlaces Externos:</h6>
+                    <ul>
+                      <li v-for="(enlace, index) in tarea.materialReferencia.enlaces" :key="index">
+                        <a :href="enlace.url" target="_blank">{{ enlace.texto }}</a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -91,117 +105,141 @@ import html2pdf from 'html2pdf.js'
 export default {
   data() {
     return {
-      tareas: []
+      mostrarWordpressTareas: false,
+      tareas: [
+        {
+          id: 1,
+          titulo: 'Actualizar Software',
+          descripcion:
+            'Asegúrate de que todo el software esté actualizado con los últimos parches de seguridad.',
+          completada: false,
+          mostrarContenido: false,
+          materialReferencia: {
+            descripcion: 'Actualiza todos los componentes del sistema',
+            tips: [
+              'Revisa la documentación del software',
+              'Configura actualizaciones automáticas',
+              'Consulta los boletines de seguridad'
+            ],
+            enlaces: [{ texto: 'Documentación de Actualización', url: 'https://example.com' }]
+          }
+        },
+        {
+          id: 2,
+          titulo: 'Usar Contraseñas Fuertes',
+          descripcion: 'Implementa contraseñas robustas y políticas de renovación.',
+          completada: false,
+          mostrarContenido: false,
+          materialReferencia: {
+            descripcion: 'Utiliza un gestor de contraseñas',
+            tips: [
+              'Evita contraseñas comunes',
+              'Cambia las contraseñas periódicamente',
+              'Usa autenticación de dos factores'
+            ],
+            enlaces: [{ texto: 'Guía de Contraseñas Seguras', url: 'https://example.com' }]
+          }
+        },
+        // Tareas de WordPress
+        {
+          id: 11,
+          titulo: 'Actualizar WordPress',
+          descripcion: 'Asegúrate de que WordPress esté actualizado a la última versión.',
+          completada: false,
+          mostrarContenido: false,
+          materialReferencia: {
+            descripcion: 'Mantén tu WordPress al día',
+            tips: [
+              'Revisa actualizaciones regularmente',
+              'Lee las notas de la versión',
+              'Configura actualizaciones automáticas'
+            ],
+            enlaces: [{ texto: 'Guía de Actualización de WordPress', url: 'https://example.com' }]
+          }
+        },
+        {
+          id: 12,
+          titulo: 'Revisar Plugins y Temas',
+          descripcion:
+            'Elimina plugins y temas no utilizados y asegúrate de que los instalados estén actualizados.',
+          completada: false,
+          mostrarContenido: false,
+          materialReferencia: {
+            descripcion: 'Gestiona plugins y temas con cuidado',
+            tips: [
+              'Elimina plugins y temas inactivos',
+              'Actualiza los plugins y temas activos',
+              'Revisa las reseñas y calificaciones'
+            ],
+            enlaces: [{ texto: 'Guía de Plugins y Temas', url: 'https://example.com' }]
+          }
+        }
+      ]
     }
   },
   computed: {
     tareasOrdenadas() {
-      return [...this.tareas].sort((a, b) => a.completada - b.completada)
+      const todasLasTareas = this.mostrarWordpressTareas
+        ? [...this.tareas]
+        : [...this.tareas.filter((t) => t.id <= 10)]
+      return todasLasTareas.sort((a, b) => a.completada - b.completada)
     }
   },
   methods: {
     exportarPDF() {
       const element = document.querySelector('#checklist-container')
-      html2pdf(element)
+      const opt = {
+        margin: [10, 10, 10, 10],
+        filename: 'checklist-seguridad.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      }
+      html2pdf()
+        .from(element)
+        .set(opt)
+        .toPdf()
+        .get('pdf')
+        .then(function (pdf) {
+          const totalPages = pdf.internal.getNumberOfPages()
+          for (let i = 1; i <= totalPages; i++) {
+            pdf.setPage(i)
+            pdf.text('Página ' + i + ' de ' + totalPages, 15, 285)
+          }
+        })
+        .save()
     },
     updateTarea(tarea) {
-      // Actualiza el estado de completada
       tarea.completada = !tarea.completada
+      if (tarea.completada) {
+        tarea.mostrarContenido = false
+      }
       this.saveTareasToLocalStorage()
     },
     toggleCollapse(tarea) {
-      // Alterna el estado de mostrar contenido adicional
       tarea.mostrarContenido = !tarea.mostrarContenido
       this.saveTareasToLocalStorage()
     },
     saveTareasToLocalStorage() {
-      // Guarda el estado actualizado en localStorage
-      localStorage.setItem('tareas', JSON.stringify(this.tareas))
+      const todasLasTareas = this.tareas
+      const tareasGuardadas = {
+        mostrarWordpressTareas: this.mostrarWordpressTareas,
+        tareas: todasLasTareas
+      }
+      localStorage.setItem('tareas', JSON.stringify(tareasGuardadas))
     },
     loadTareasFromLocalStorage() {
-      // Carga el estado guardado desde localStorage
       const tareasGuardadas = localStorage.getItem('tareas')
       if (tareasGuardadas) {
-        this.tareas = JSON.parse(tareasGuardadas)
+        const datos = JSON.parse(tareasGuardadas)
+        this.mostrarWordpressTareas = datos.mostrarWordpressTareas
+        this.tareas = datos.tareas
       } else {
-        // Si no hay tareas en localStorage, inicializa con datos predeterminados
-        this.tareas = [
-          {
-            id: 1,
-            titulo: 'Usar HTTPS',
-            descripcion: 'Asegúrate de que tu sitio use HTTPS para conexiones seguras.',
-            completada: false,
-            mostrarContenido: false
-          },
-          {
-            id: 2,
-            titulo: 'Cifrado de contraseñas',
-            descripcion: 'Cifra las contraseñas con un algoritmo fuerte, como bcrypt.',
-            completada: false,
-            mostrarContenido: false
-          },
-          {
-            id: 3,
-            titulo: 'Backups regulares',
-            descripcion: 'Realiza copias de seguridad periódicas de tu sitio web.',
-            completada: false,
-            mostrarContenido: false
-          },
-          {
-            id: 4,
-            titulo: 'Política de seguridad de contenido (CSP)',
-            descripcion: 'Implementa CSP para mitigar ataques de cross-site scripting.',
-            completada: false,
-            mostrarContenido: false
-          },
-          {
-            id: 5,
-            titulo: 'Actualización de software',
-            descripcion: 'Mantén el software de tu sitio siempre actualizado.',
-            completada: false,
-            mostrarContenido: false
-          },
-          {
-            id: 6,
-            titulo: 'Control de acceso',
-            descripcion: 'Asegúrate de tener un buen control de acceso a las áreas restringidas.',
-            completada: false,
-            mostrarContenido: false
-          },
-          {
-            id: 7,
-            titulo: 'Firewall de aplicaciones web (WAF)',
-            descripcion: 'Configura un WAF para protegerte contra ataques comunes.',
-            completada: false,
-            mostrarContenido: false
-          },
-          {
-            id: 8,
-            titulo: 'Protección contra fuerza bruta',
-            descripcion: 'Implementa medidas para prevenir ataques de fuerza bruta.',
-            completada: false,
-            mostrarContenido: false
-          },
-          {
-            id: 9,
-            titulo: 'Seguridad en el correo electrónico',
-            descripcion: 'Utiliza SPF, DKIM y DMARC para proteger los correos.',
-            completada: false,
-            mostrarContenido: false
-          },
-          {
-            id: 10,
-            titulo: 'Monitoreo de seguridad',
-            descripcion: 'Monitorea tu sitio web para detectar y responder a incidentes.',
-            completada: false,
-            mostrarContenido: false
-          }
-        ]
-        this.saveTareasToLocalStorage()
+        // Inicializar tareas
       }
     }
   },
-  created() {
+  mounted() {
     this.loadTareasFromLocalStorage()
   }
 }
@@ -209,75 +247,45 @@ export default {
 
 <style scoped>
 .card {
-  border-radius: 10px;
-  border: 1px solid transparent; /* Para aplicar border color condicionalmente */
+  transition: background-color 0.3s;
+  border-radius: 8px;
 }
-
-.card-body {
-  padding: 15px;
+.bg-light {
+  background-color: var(--vt-green) !important;
 }
-
-.card-title {
-  font-size: 1.25rem;
+.wp-card {
+  border: 2px solid var(--vt-blue);
 }
-
-.card-text {
-  font-size: 1rem;
-}
-
-.card.bg-light {
-  background-color: var(--vt-green);
-}
-
-.card.border-secondary {
-  border-color: var(--vt-purple-soft);
-}
-
-.card.border-2 {
-  border-width: 2px;
-  border-color: var(--vt-blue); /* Color del borde para tarjetas no completadas */
-}
-
-.btn-link {
-  color: var(--vt-blue);
-}
-
-.btn-link:hover {
-  text-decoration: underline;
-}
-
-.text-decoration-line-through {
-  text-decoration: line-through;
-}
-
-/* Icono en el botón */
-.bi-info-circle {
-  font-size: 1.25rem;
-}
-
-/* Estilo personalizado para el checkbox */
-.custom-checkbox {
-  width: 24px; /* Tamaño del checkbox */
-  height: 24px; /* Tamaño del checkbox */
-  accent-color: var(--vt-purple); /* Color del check */
-  border: 2px solid var(--vt-blue); /* Borde más visible cuando no está seleccionado */
-}
-
-/* Estilo para el estado marcado del checkbox */
-.custom-checkbox:checked {
-  background-color: var(--vt-purple);
-  border-color: var(--vt-purple);
-}
-
-/* Alineación del checkbox con el texto */
-.d-flex.align-items-center {
+.wp-icon-container {
   display: flex;
   align-items: center;
+  background-color: var(--vt-blue);
+  border-radius: 4px;
+  padding: 0.5rem;
+  color: var(--vt-green);
+  position: absolute;
+  right: 10px;
 }
-
-/* Estilo del título */
-.fw-bold {
-  font-weight: bold;
-  color: var(--vt-blue);
+.wp-icon {
+  font-size: 1.25rem;
+}
+.btn-light {
+  background-color: #f8f9fa;
+  color: #495057;
+}
+.btn-sm {
+  font-size: 0.875rem;
+}
+.custom-checkbox:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.form-check-input {
+  transform: scale(1.25);
+}
+.form-check-label {
+  margin-bottom: 0;
+}
+.card-body {
+  position: relative;
 }
 </style>
