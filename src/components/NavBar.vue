@@ -4,16 +4,16 @@
       <a class="navbar-brand fw-bold fs-3" href="/"
         ><i class="bi bi-search-heart pe-2"></i>Chequea.la</a
       >
-      <span class="navbar-text d-flex d-none d-md-block"
-        >Atendemos incidentes web de organizaciones en Latinoamérica.</span
-      >
-      <form class="form-inline my-2 my-lg-0">
+      <form class="form-inline">
         <select class="form-control" v-model="selectedLanguage" @change="changeLanguage">
           <option v-for="(language, code) in languages" :key="code" :value="code">
             {{ language }}
           </option>
         </select>
       </form>
+      <span class="navbar-text d-flex d-none d-md-block"
+        >Atendemos incidentes web de organizaciones en Latinoamérica.</span
+      >
     </div>
   </nav>
 </template>
@@ -23,16 +23,16 @@ export default {
   data() {
     return {
       languages: {
-        es: 'Español',
-        pt: 'Português',
-        en: 'English'
+        es: 'es',
+        pt: 'pt'
       },
-      selectedLanguage: 'es' // Idioma por defecto
+      selectedLanguage: this.$i18n.locale // Idioma por defecto
     }
   },
   methods: {
     changeLanguage() {
       this.$i18n.locale = this.selectedLanguage
+      localStorage.setItem('locale', this.selectedLanguage) // Guarda la preferencia en localStorage
     }
   },
   mounted() {

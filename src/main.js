@@ -5,17 +5,6 @@ import 'bootstrap/dist/js/bootstrap.js'
 import 'bootstrap'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
-// import { createApp } from 'vue'
-// import App from './App.vue'
-// import router from './router'
-// import { createPinia } from 'pinia'
-
-// const app = createApp(App)
-
-// app.use(createPinia())
-// app.use(router)
-// app.mount('#app')
-
 import { createApp } from 'vue'
 import App from './App.vue'
 import { createPinia } from 'pinia'
@@ -23,11 +12,12 @@ import router from './router'
 import { createI18n } from 'vue-i18n'
 import es from './locales/es.json'
 import pt from './locales/pt.json'
-// import 'bootstrap/dist/css/bootstrap.min.css'
-// import 'bootstrap-icons/font/bootstrap-icons.css'
+
+const savedLocale = localStorage.getItem('locale') || 'es' // 'es' es el idioma por defecto
 
 const i18n = createI18n({
-  locale: 'es', // Establece el idioma predeterminado
+  // locale: 'es',
+  locale: savedLocale,
   fallbackLocale: 'es',
   messages: {
     es,
