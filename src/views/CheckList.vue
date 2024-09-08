@@ -3,14 +3,15 @@
     <div class="container" id="checklist-container">
       <h1 class="text-center mb-4">{{ $t('title') }}</h1>
 
-      <!-- Contenedor para el botón de exportar y el switch -->
       <div class="d-flex justify-content-between mb-4">
-        <!-- Botón para exportar PDF -->
-        <button class="btn btn-light btn-sm d-flex align-items-center" @click="exportarPDF">
+        <button
+          class="btn btn-light btn-sm d-flex align-items-center"
+          @click="exportarPDF"
+          title="{{ $t('exportPdfTooltip') }}"
+        >
           <i class="bi bi-file-earmark-pdf me-2"></i> {{ $t('exportPdf') }}
         </button>
 
-        <!-- Checkbox para mostrar recomendaciones de WordPress -->
         <div class="form-check form-switch">
           <input
             class="form-check-input"
@@ -23,7 +24,6 @@
         </div>
       </div>
 
-      <!-- Tarjetas con las Recomendaciones -->
       <div class="row">
         <div v-for="tarea in tareasOrdenadas" :key="tarea.id" class="col-md-6 mb-3">
           <div
@@ -48,17 +48,40 @@
                     class="fw-bold"
                     :style="{ color: tarea.completada ? 'inherit' : 'var(--vt-blue)' }"
                   >
-                    {{ $t(`recommendations[${tarea.id - 1}].titulo`) }}
+                    {{ tarea.titulo }}
                   </span>
                 </label>
-                <!-- Ícono para tareas de WordPress, movido a la derecha -->
                 <div v-if="tarea.isWordpress" class="wp-icon-container ms-auto">
                   <i class="bi bi-wordpress wp-icon"></i>
                 </div>
               </div>
               <p class="card-text" :class="{ 'text-muted': tarea.completada }">
-                {{ $t(`recommendations[${tarea.id - 1}].descripcion`) }}
+                {{ tarea.descripcion }}
               </p>
+
+              <button class="btn btn-link" @click="toggleExtraInfo(tarea)">
+                <i :class="tarea.mostrarContenido ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
+                {{ tarea.mostrarContenido ? $t('hideInfo') : $t('showInfo') }}
+              </button>
+
+              <div v-if="tarea.mostrarContenido">
+                <p class="fw-bold">{{ $t('details') }}:</p>
+                <p class="card-text">{{ tarea.detalles }}</p>
+                <div v-if="tarea.tips.length > 0">
+                  <p class="fw-bold">{{ $t('tips') }}:</p>
+                  <ul>
+                    <li v-for="tip in tarea.tips" :key="tip">{{ tip }}</li>
+                  </ul>
+                </div>
+                <div v-if="tarea.enlaces.length > 0">
+                  <p class="fw-bold">{{ $t('links') }}:</p>
+                  <ul>
+                    <li v-for="enlace in tarea.enlaces" :key="enlace.url">
+                      <a :href="enlace.url" target="_blank">{{ enlace.texto }}</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -79,16 +102,12 @@ export default {
   },
   computed: {
     tareasOrdenadas() {
-      const tareasNoWordpress = this.tareas.filter((t) => !t.isWordpress)
-      const tareasWordpress = this.tareas.filter((t) => t.isWordpress)
-      const todasLasTareas = this.mostrarWordpressTareas
-        ? [...tareasNoWordpress, ...tareasWordpress]
-        : tareasNoWordpress
-
-      // Ordenar tareas: las completadas van al final
+      const tareasFiltradas = this.tareas.filter(
+        (t) => !t.isWordpress || this.mostrarWordpressTareas
+      )
       return [
-        ...todasLasTareas.filter((t) => !t.completada),
-        ...todasLasTareas.filter((t) => t.completada)
+        ...tareasFiltradas.filter((t) => !t.completada),
+        ...tareasFiltradas.filter((t) => t.completada)
       ]
     }
   },
@@ -99,10 +118,13 @@ export default {
     },
     updateTarea(tarea) {
       tarea.completada = !tarea.completada
-      if (tarea.completada) {
-        tarea.mostrarContenido = false
+      if (!tarea.completada) {
+        tarea.mostrarContenido = false // Colapsar el contenido extra si la tarea no está completada
       }
       this.saveTareasToLocalStorage()
+    },
+    toggleExtraInfo(tarea) {
+      tarea.mostrarContenido = !tarea.mostrarContenido
     },
     saveTareasToLocalStorage() {
       const tareasGuardadas = {
@@ -122,7 +144,11 @@ export default {
         this.mostrarWordpressTareas = datos.mostrarWordpressTareas
         this.tareas = this.$i18n.messages[this.$i18n.locale].recommendations.map((tarea) => {
           const guardada = datos.tareas.find((t) => t.id === tarea.id)
-          return { ...tarea, completada: guardada ? guardada.completada : tarea.completada }
+          return {
+            ...tarea,
+            completada: guardada ? guardada.completada : tarea.completada,
+            mostrarContenido: false
+          }
         })
       } else {
         this.tareas = this.$i18n.messages[this.$i18n.locale].recommendations
@@ -137,8 +163,11 @@ export default {
 
 <style scoped>
 .card {
-  transition: background-color 0.3s;
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s;
   border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .card-body {
   padding: 1.25rem;
@@ -157,7 +186,10 @@ export default {
   border-radius: 4px;
   padding: 5px;
   color: white;
-  background-color: var(--vt-blue); /* Fondo del icono */
+  background-color: var(--vt-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .wp-icon {
   font-size: 1.25rem;
@@ -167,5 +199,18 @@ export default {
 }
 .form-check-label {
   margin-bottom: 0;
+}
+.btn-link {
+  color: var(--vt-blue);
+  font-weight: 500;
+}
+.btn-link:hover {
+  color: var(--vt-purple);
+}
+.card-text a {
+  color: var(--vt-blue);
+}
+.card-text a:hover {
+  text-decoration: underline;
 }
 </style>

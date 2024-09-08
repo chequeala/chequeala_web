@@ -33,6 +33,7 @@ export default {
     changeLanguage() {
       this.$i18n.locale = this.selectedLanguage
       localStorage.setItem('locale', this.selectedLanguage) // Guarda la preferencia en localStorage
+      window.location.reload() // Recarga la página
     }
   },
   mounted() {
@@ -47,11 +48,9 @@ export default {
   background-color: #fff;
 }
 .navbar .navbar-brand {
-  /* color: #86a5d9; */
   color: var(--vt-blue);
 }
 .navbar .navbar-brand i {
-  /* color: #b288ff; */
   color: var(--vt-purple-soft);
 }
 </style>
