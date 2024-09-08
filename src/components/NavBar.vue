@@ -1,19 +1,25 @@
 <template>
   <nav class="navbar navbar-expand-lg">
-    <div class="container py-1">
-      <a class="navbar-brand fw-bold fs-3" href="/"
-        ><i class="bi bi-search-heart pe-2"></i>Chequea.la</a
-      >
-      <form class="form-inline">
-        <select class="form-control" v-model="selectedLanguage" @change="changeLanguage">
-          <option v-for="(language, code) in languages" :key="code" :value="code">
-            {{ language }}
-          </option>
-        </select>
-      </form>
-      <span class="navbar-text d-flex d-none d-md-block"
-        >Atendemos incidentes web de organizaciones en Latinoamérica.</span
-      >
+    <div class="container py-1 d-flex align-items-center">
+      <div class="text-start">
+        <a class="navbar-brand fw-bold fs-3 me-0" href="/">
+          <i class="bi bi-search-heart pe-2"></i>Chequea.la
+        </a>
+        <form class="form-inline d-inline-flex form-select-xs align-bottom">
+          <select
+            class="form-control form-control-sm"
+            v-model="selectedLanguage"
+            @change="changeLanguage"
+          >
+            <option v-for="(language, code) in languages" :key="code" :value="code">
+              {{ language }}
+            </option>
+          </select>
+        </form>
+      </div>
+      <span class="navbar-text d-none d-md-block">
+        Atendemos incidentes web de organizaciones en Latinoamérica.
+      </span>
     </div>
   </nav>
 </template>
@@ -52,5 +58,10 @@ export default {
 }
 .navbar .navbar-brand i {
   color: var(--vt-purple-soft);
+}
+
+.form-control-sm {
+  font-size: 0.6rem; /* Tamaño de fuente pequeño */
+  margin: 0; /* Elimina el margen inferior */
 }
 </style>

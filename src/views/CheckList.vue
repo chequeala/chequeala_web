@@ -7,7 +7,7 @@
         <button
           class="btn btn-light btn-sm d-flex align-items-center"
           @click="exportarPDF"
-          title="{{ $t('exportPdfTooltip') }}"
+          :title="$t('exportPdfTooltip')"
         >
           <i class="bi bi-file-earmark-pdf me-2"></i> {{ $t('exportPdf') }}
         </button>
@@ -30,7 +30,7 @@
             :class="[
               'card',
               tarea.isWordpress ? 'wp-card' : '',
-              tarea.completada ? 'bg-light border-secondary' : 'border-2'
+              tarea.completada ? 'bg-light' : ''
             ]"
           >
             <div class="card-body">
@@ -64,7 +64,7 @@
                 {{ tarea.mostrarContenido ? $t('hideInfo') : $t('showInfo') }}
               </button>
 
-              <div v-if="tarea.mostrarContenido">
+              <div v-if="tarea.mostrarContenido" class="extra-info-card">
                 <p class="fw-bold">{{ $t('details') }}:</p>
                 <p class="card-text">{{ tarea.detalles }}</p>
                 <div v-if="tarea.tips.length > 0">
@@ -114,7 +114,15 @@ export default {
   methods: {
     exportarPDF() {
       const element = document.querySelector('#checklist-container')
-      html2pdf(element)
+      const opt = {
+        margin: 1,
+        filename: 'Lista de Tareas de Seguridad Web.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      }
+
+      html2pdf().from(element).set(opt).save()
     },
     updateTarea(tarea) {
       tarea.completada = !tarea.completada
@@ -163,11 +171,8 @@ export default {
 
 <style scoped>
 .card {
-  transition:
-    background-color 0.3s,
-    box-shadow 0.3s;
+  transition: background-color 0.3s;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .card-body {
   padding: 1.25rem;
@@ -175,21 +180,14 @@ export default {
 .bg-light {
   background-color: var(--vt-green) !important;
 }
-.border-2 {
-  border: 2px solid var(--vt-blue);
-}
 .wp-card {
   border: 2px solid var(--vt-blue);
 }
 .wp-icon-container {
-  border: 2px solid var(--vt-blue);
   border-radius: 4px;
   padding: 5px;
   color: white;
-  background-color: var(--vt-blue);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: var(--vt-blue); /* Fondo del icono */
 }
 .wp-icon {
   font-size: 1.25rem;
@@ -200,17 +198,14 @@ export default {
 .form-check-label {
   margin-bottom: 0;
 }
-.btn-link {
-  color: var(--vt-blue);
-  font-weight: 500;
+.extra-info-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
 }
-.btn-link:hover {
-  color: var(--vt-purple);
-}
-.card-text a {
-  color: var(--vt-blue);
-}
-.card-text a:hover {
-  text-decoration: underline;
+.extra-info-card p {
+  margin: 0.5rem 0;
 }
 </style>

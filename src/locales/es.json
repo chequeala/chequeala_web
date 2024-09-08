@@ -1,6 +1,7 @@
 {
   "title": "Lista de Tareas de Seguridad Web",
   "exportPdf": "Exportar PDF",
+  "exportPdfTooltip": "Descargar el checklist en formato PDF",
   "wordpressSwitch": "Mostrar tareas de WordPress",
   "showInfo": "Mostrar material de referencia",
   "hideInfo": "Ocultar material de referencia",
