@@ -1,0 +1,292 @@
+<template>
+  <div class="container-fluid green-section pt-5 pb-3">
+    <div class="container" id="checklist-container">
+      <h1 class="text-center mb-4">Checklist de Seguridad Web</h1>
+
+      <!-- Contenedor para el botón de exportar y el switch -->
+      <div class="d-flex justify-content-between mb-4">
+        <!-- Botón para exportar PDF -->
+        <button class="btn btn-light btn-sm d-flex align-items-center" @click="exportarPDF">
+          <i class="bi bi-file-earmark-pdf me-2"></i> Exportar PDF
+        </button>
+
+        <!-- Checkbox para mostrar recomendaciones de WordPress -->
+        <div class="form-check form-switch">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="wordpressSwitch"
+            v-model="mostrarWordpressTareas"
+            @change="saveTareasToLocalStorage"
+          />
+          <label class="form-check-label" for="wordpressSwitch">
+            Mostrar Recomendaciones de Seguridad para WordPress
+          </label>
+        </div>
+      </div>
+
+      <!-- Tarjetas con las Tareas -->
+      <div class="row">
+        <div v-for="tarea in tareasOrdenadas" :key="tarea.id" class="col-md-6 mb-3">
+          <div
+            :class="[
+              'card',
+              tarea.isWordpress ? 'wp-card' : '',
+              tarea.completada ? 'bg-light border-secondary' : 'border-2'
+            ]"
+          >
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <input
+                  class="form-check-input me-2 custom-checkbox"
+                  type="checkbox"
+                  :checked="tarea.completada"
+                  :id="'tarea-' + tarea.id"
+                  @change="updateTarea(tarea)"
+                />
+                <label class="form-check-label" :for="'tarea-' + tarea.id">
+                  <span
+                    :class="{ 'text-muted': tarea.completada }"
+                    class="fw-bold"
+                    :style="{ color: tarea.completada ? 'inherit' : 'var(--vt-blue)' }"
+                  >
+                    {{ tarea.titulo }}
+                  </span>
+                </label>
+                <!-- Ícono para tareas de WordPress, movido a la derecha -->
+                <div v-if="tarea.isWordpress" class="wp-icon-container ms-auto">
+                  <i class="bi bi-wordpress wp-icon"></i>
+                </div>
+              </div>
+              <p class="card-text" :class="{ 'text-muted': tarea.completada }">
+                {{ tarea.descripcion }}
+              </p>
+
+              <!-- Botón de despliegue para Material de Referencia con ícono -->
+              <button class="btn btn-link" type="button" @click="toggleCollapse(tarea)">
+                <i class="bi bi-info-circle me-2"></i> Mostrar Material de Referencia
+              </button>
+
+              <!-- Acordeón para contenido adicional -->
+              <div
+                :id="'collapse-' + tarea.id"
+                class="collapse mt-3"
+                :class="{ show: tarea.mostrarContenido }"
+              >
+                <div class="card card-body">
+                  <div v-if="tarea.materialReferencia">
+                    <h6>Material de Referencia:</h6>
+                    <p>{{ tarea.materialReferencia.descripcion }}</p>
+                    <ul>
+                      <li v-for="(tip, index) in tarea.materialReferencia.tips" :key="index">
+                        {{ tip }}
+                      </li>
+                    </ul>
+                    <h6>Enlaces Externos:</h6>
+                    <ul>
+                      <li v-for="(enlace, index) in tarea.materialReferencia.enlaces" :key="index">
+                        <a :href="enlace.url" target="_blank">{{ enlace.texto }}</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  import html2pdf from 'html2pdf.js'
+
+  export default {
+    data() {
+      return {
+        mostrarWordpressTareas: false,
+        tareas: [
+          {
+            id: 1,
+            titulo: 'Actualizar Plugins',
+            descripcion:
+              'Asegúrate de que todos los plugins estén actualizados para evitar vulnerabilidades.',
+            completada: false,
+            mostrarContenido: false,
+            isWordpress: false,
+            materialReferencia: {
+              descripcion: 'Actualiza los plugins desde el panel de administración de WordPress.',
+              tips: [
+                'Revisa las actualizaciones regularmente.',
+                'Configura actualizaciones automáticas si es posible.'
+              ],
+              enlaces: [
+                {
+                  texto: 'Guía de Actualización de Plugins',
+                  url: 'https://wordpress.org/support/article/updating-plugins/'
+                }
+              ]
+            }
+          },
+          {
+            id: 2,
+            titulo: 'Hacer Copias de Seguridad',
+            descripcion: 'Configura una rutina de copias de seguridad para proteger tus datos.',
+            completada: false,
+            mostrarContenido: false,
+            isWordpress: false,
+            materialReferencia: {
+              descripcion: 'Utiliza un plugin de copias de seguridad o un servicio externo.',
+              tips: [
+                'Haz copias de seguridad regularmente.',
+                'Almacena las copias en un lugar seguro.'
+              ],
+              enlaces: [
+                {
+                  texto: 'Plugin de Copias de Seguridad',
+                  url: 'https://wordpress.org/plugins/backupbuddy/'
+                }
+              ]
+            }
+          },
+          // Tareas de WordPress agregadas aquí
+          {
+            id: 3,
+            titulo: 'Desactivar XML-RPC',
+            descripcion: 'Desactiva XML-RPC para prevenir ataques de fuerza bruta.',
+            completada: false,
+            mostrarContenido: false,
+            isWordpress: true,
+            materialReferencia: {
+              descripcion:
+                'Puedes desactivar XML-RPC mediante un plugin o modificando el archivo .htaccess.',
+              tips: [
+                'Revisa la documentación de tu plugin.',
+                'Considera añadir reglas en .htaccess para bloquear XML-RPC.'
+              ],
+              enlaces: [
+                {
+                  texto: 'Guía para Desactivar XML-RPC',
+                  url: 'https://www.wpbeginner.com/wp-security/disable-xml-rpc-in-wordpress/'
+                }
+              ]
+            }
+          },
+          {
+            id: 4,
+            titulo: 'Configurar Permisos de Archivos',
+            descripcion:
+              'Asegúrate de que los permisos de archivos sean correctos para evitar accesos no autorizados.',
+            completada: false,
+            mostrarContenido: false,
+            isWordpress: true,
+            materialReferencia: {
+              descripcion:
+                'Revisa los permisos de archivos y directorios desde tu panel de control de hosting o mediante FTP.',
+              tips: [
+                'Permite solo los permisos necesarios.',
+                'Evita permisos 777 en archivos y directorios.'
+              ],
+              enlaces: [
+                {
+                  texto: 'Guía sobre Permisos de Archivos en WordPress',
+                  url: 'https://wordpress.org/support/article/changing-file-permissions/'
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    computed: {
+      tareasOrdenadas() {
+        const tareasNoWordpress = this.tareas.filter((t) => !t.isWordpress)
+        const tareasWordpress = this.tareas.filter((t) => t.isWordpress)
+        const todasLasTareas = this.mostrarWordpressTareas
+          ? [...tareasNoWordpress, ...tareasWordpress]
+          : tareasNoWordpress
+
+        return todasLasTareas.sort((a, b) => a.completada - b.completada)
+      }
+    },
+    methods: {
+      exportarPDF() {
+        const element = document.querySelector('#checklist-container')
+        html2pdf(element)
+      },
+      updateTarea(tarea) {
+        tarea.completada = !tarea.completada
+        if (tarea.completada) {
+          tarea.mostrarContenido = false
+        }
+        this.saveTareasToLocalStorage()
+      },
+      toggleCollapse(tarea) {
+        tarea.mostrarContenido = !tarea.mostrarContenido
+      },
+      saveTareasToLocalStorage() {
+        const tareasGuardadas = {
+          mostrarWordpressTareas: this.mostrarWordpressTareas,
+          tareas: this.tareas.map((t) => ({
+            id: t.id,
+            titulo: t.titulo,
+            descripcion: t.descripcion,
+            completada: t.completada,
+            isWordpress: t.isWordpress
+          }))
+        }
+        localStorage.setItem('tareas', JSON.stringify(tareasGuardadas))
+      },
+      loadTareasFromLocalStorage() {
+        const tareasGuardadas = localStorage.getItem('tareas')
+        if (tareasGuardadas) {
+          const datos = JSON.parse(tareasGuardadas)
+          this.mostrarWordpressTareas = datos.mostrarWordpressTareas
+          this.tareas = this.tareas.map((tarea) => {
+            const guardada = datos.tareas.find((t) => t.id === tarea.id)
+            return { ...tarea, completada: guardada ? guardada.completada : tarea.completada }
+          })
+        }
+      }
+    },
+    mounted() {
+      this.loadTareasFromLocalStorage()
+    }
+  }
+</script>
+
+<style scoped>
+  .card {
+    transition: background-color 0.3s;
+    border-radius: 8px;
+  }
+  .card-body {
+    padding: 1.25rem;
+  }
+  .bg-light {
+    background-color: var(--vt-green) !important;
+  }
+  .border-2 {
+    border: 2px solid var(--vt-blue);
+  }
+  .wp-card {
+    border: 2px solid var(--vt-blue);
+  }
+  .wp-icon-container {
+    border: 2px solid var(--vt-blue);
+    border-radius: 4px;
+    padding: 5px;
+    color: white;
+    background-color: var(--vt-blue); /* Fondo del icono */
+  }
+  .wp-icon {
+    font-size: 1.25rem;
+  }
+  .custom-checkbox {
+    transform: scale(1.25);
+  }
+  .form-check-label {
+    margin-bottom: 0;
+  }
+</style>

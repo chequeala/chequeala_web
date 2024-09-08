@@ -1,0 +1,91 @@
+{
+  "title": "Lista de Verificação de Segurança Web",
+  "exportPdf": "Exportar PDF",
+  "wordpressSwitch": "Mostrar Recomendações de Segurança para WordPress",
+  "recommendations": [
+    {
+      "id": 1,
+      "titulo": "Mantenha seus plugins atualizados",
+      "descripcion": "Certifique-se de atualizar todos os plugins para evitar vulnerabilidades.",
+      "isWordpress": false
+    },
+    {
+      "id": 2,
+      "titulo": "Faça backups regularmente",
+      "descripcion": "Realize backups periódicos do seu site para evitar a perda de dados.",
+      "isWordpress": false
+    },
+    {
+      "id": 3,
+      "titulo": "Implemente HTTPS",
+      "descripcion": "Certifique-se de que seu site use HTTPS para criptografar a comunicação entre o servidor e os usuários.",
+      "isWordpress": false
+    },
+    {
+      "id": 4,
+      "titulo": "Configure um firewall",
+      "descripcion": "Use um firewall para proteger seu site contra ataques maliciosos.",
+      "isWordpress": false
+    },
+    {
+      "id": 5,
+      "titulo": "Use senhas seguras",
+      "descripcion": "Certifique-se de que todas as senhas sejam fortes e únicas.",
+      "isWordpress": false
+    },
+    {
+      "id": 6,
+      "titulo": "Desative o acesso ao wp-admin para IPs não autorizados",
+      "descripcion": "Limite o acesso à administração do seu site apenas a IPs específicas.",
+      "isWordpress": true
+    },
+    {
+      "id": 7,
+      "titulo": "Verifique as permissões de arquivo",
+      "descripcion": "Certifique-se de que as permissões de arquivo em seu servidor sejam adequadas para evitar acessos não autorizados.",
+      "isWordpress": false
+    },
+    {
+      "id": 8,
+      "titulo": "Desative XML-RPC",
+      "descripcion": "Desative XML-RPC se não precisar dele para evitar certos tipos de ataques.",
+      "isWordpress": true
+    },
+    {
+      "id": 9,
+      "titulo": "Proteja o banco de dados",
+      "descripcion": "Altere o prefixo das tabelas do banco de dados e use senhas fortes para protegê-lo.",
+      "isWordpress": true
+    },
+    {
+      "id": 10,
+      "titulo": "Instale um plugin de segurança",
+      "descripcion": "Use um plugin de segurança para adicionar uma camada adicional de proteção.",
+      "isWordpress": true
+    },
+    {
+      "id": 11,
+      "titulo": "Mantenha sua versão do WordPress atualizada",
+      "descripcion": "Sempre atualize para a versão mais recente do WordPress para corrigir vulnerabilidades conhecidas.",
+      "isWordpress": true
+    },
+    {
+      "id": 12,
+      "titulo": "Desative a edição de arquivos pelo painel de administração",
+      "descripcion": "Desative a capacidade de editar arquivos pelo painel de administração para reduzir o risco de alterações não autorizadas.",
+      "isWordpress": true
+    },
+    {
+      "id": 13,
+      "titulo": "Configure um sistema de autenticação de dois fatores",
+      "descripcion": "Adicione uma camada adicional de segurança com autenticação de dois fatores para o login.",
+      "isWordpress": true
+    },
+    {
+      "id": 14,
+      "titulo": "Revise regularmente os registros de atividade",
+      "descripcion": "Monitore os registros de atividade do seu site para detectar qualquer comportamento suspeito.",
+      "isWordpress": true
+    }
+  ]
+}
