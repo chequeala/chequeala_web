@@ -24,8 +24,8 @@
         </div>
       </div>
 
-      <div class="row">
-        <div v-for="tarea in tareasOrdenadas" :key="tarea.id" class="col-md-6 mb-3">
+      <transition-group name="fade" tag="div" class="row">
+        <div v-for="tarea in tareasOrdenadas" :key="tarea.id" class="col-md-6 mb-3 fade-item">
           <div
             :class="[
               'card',
@@ -85,7 +85,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </transition-group>
     </div>
   </div>
 </template>
@@ -207,5 +207,23 @@ export default {
 }
 .extra-info-card p {
   margin: 0.5rem 0;
+}
+.fade-item {
+  transition:
+    transform 0.5s,
+    opacity 0.5s;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition:
+    opacity 0.5s,
+    transform 0.5s;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(20px);
 }
 </style>
