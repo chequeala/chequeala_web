@@ -35,7 +35,7 @@ Además, ofrece recomendaciones específicas para sitios hechos en WordPress, in
 ¡Nos encantaría contar con tu ayuda! Puedes colaborar de las siguientes maneras:
 
 - **Feedback**: Comparte tus comentarios y sugerencias para mejorar la herramienta.
-- **Traducción**: Ayúdanos a traducir el proyecto a otros idiomas.
+- **Traducción**: Ayúdanos a traducir el proyecto a otros idiomas. Puedes hacerlo a través de nuestra plataforma de traducción en Crowdin: [https://crowdin.com/project/chequeala](https://crowdin.com/project/chequeala).
 
 Si estás interesado en colaborar, por favor abre un **issue** o envía un **pull request**. Para cualquier consulta, no dudes en contactarnos a través de nuestro correo electrónico seguro: `info [at] chequea [dot] la`.
 
