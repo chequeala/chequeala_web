@@ -8,18 +8,17 @@ import SectionTestimonios from '@/components/home/SectionTestimonios.vue'
       <div class="row">
         <div class="col-md-6 d-flex align-items-end pb-5 mb-5">
           <div>
-            <h2>¿Problemas con tu sitio web?</h2>
+            <h2>{{ $t('home.headerTitle') }}</h2>
             <p class="fw-light">
-              Si defiendes derechos humanos en Latinoamérica, estamos aquí para ti.
+              {{ $t('home.headerDescription1') }}
               <br />
-              ¿Tu organización o colectivo está enfrentando un incidente en su plataforma web?
-              Escríbenos a nuestra línea de ayuda por Signal y sumaremos espfuerzos para resolverlo.
+              {{ $t('home.headerDescription2') }}
             </p>
             <a
               class="btn btn-primary text-white rounded-5 px-4 py-2"
-              href="https://signal.me/#p/+16312974614"
+              :href="$t('home.signalLink')"
               role="button"
-              >Solicitar ayuda en la línea Signal<i class="bi bi-signal ms-2"></i
+              >{{ $t('home.signalButtonText') }}<i class="bi bi-signal ms-2"></i
             ></a>
           </div>
         </div>
@@ -36,7 +35,9 @@ import SectionTestimonios from '@/components/home/SectionTestimonios.vue'
           <div class="card py-5">
             <div class="card-body">
               <i class="bi bi-list-check"></i>
-              <h4><a href="/checklist" class="stretched-link">Check List</a></h4>
+              <h4>
+                <a href="/checklist" class="stretched-link">{{ $t('home.checkList') }}</a>
+              </h4>
             </div>
           </div>
         </div>
@@ -44,7 +45,11 @@ import SectionTestimonios from '@/components/home/SectionTestimonios.vue'
           <div class="card py-5">
             <div class="card-body">
               <i class="bi bi-diagram-3"></i>
-              <h4><a href="https://veni.chequea.la" class="stretched-link">Veni OSINT</a></h4>
+              <h4>
+                <a href="https://veni.chequea.la" class="stretched-link">{{
+                  $t('home.veniOSINT')
+                }}</a>
+              </h4>
             </div>
           </div>
         </div>
@@ -52,7 +57,9 @@ import SectionTestimonios from '@/components/home/SectionTestimonios.vue'
           <div class="card py-5">
             <div class="card-body">
               <i class="bi bi-collection"></i>
-              <h4><a href="/recursos" class="stretched-link">Recursos</a></h4>
+              <h4>
+                <a href="/recursos" class="stretched-link">{{ $t('home.resources') }}</a>
+              </h4>
             </div>
           </div>
         </div>
@@ -60,7 +67,9 @@ import SectionTestimonios from '@/components/home/SectionTestimonios.vue'
           <div class="card py-5">
             <div class="card-body">
               <i class="bi bi-balloon-heart"></i>
-              <h4><a href="/principios" class="stretched-link">Nuestros Principios</a></h4>
+              <h4>
+                <a href="/principios" class="stretched-link">{{ $t('home.principles') }}</a>
+              </h4>
             </div>
           </div>
         </div>
@@ -71,12 +80,9 @@ import SectionTestimonios from '@/components/home/SectionTestimonios.vue'
     <section id="faq" class="container text-center">
       <div class="row">
         <div class="col-md-4 text-start fw-light">
-          <h3><strong>Preguntas</strong> frecuentes</h3>
+          <h3>{{ $t('home.faqTitle') }}</h3>
           <p>
-            En Chequea.la, sabemos que la seguridad digital es crucial para quienes defienden los
-            derechos humanos y la libertad de expresión en línea. A continuación, respondemos
-            algunas de las preguntas más comunes sobre nuestra línea de ayuda, cómo funcionamos y
-            quiénes somos.
+            {{ $t('home.faqDescription') }}
           </p>
         </div>
         <div class="col-md-8 text-start">

@@ -305,5 +305,109 @@
       ],
       "isWordpress": true
     }
-  ]
+  ],
+  "navbar": {
+    "brand": "Chequea.la",
+    "description": "Atendemos incidentes web de organizaciones en Latinoamérica.",
+    "languages": {
+      "es": "Español",
+      "pt": "Portugués"
+    }
+  },
+  "footer": {
+    "part1": "Este es un proyecto de la comunidad",
+    "part2": "para la comunidad",
+    "highlight": "latinoamericana"
+  },
+  "comingSoon": {
+    "tituloDestacado": "¡Estamos mejorando!",
+    "titulo": "Vuelve pronto para más seguridad web.",
+    "descripcion": "¡Pronto estaremos listos! Estamos trabajando en nuevas herramientas y recursos informativos que te ayudarán a mantener tu web segura. Vuelve pronto para descubrir todo lo que hemos preparado. ¡Gracias por tu paciencia!",
+    "altImagen": "En construcción, próximamente"
+  },
+  "testimonios": {
+    "titulo": "Testimonios",
+    "anterior": "Anterior",
+    "siguiente": "Siguiente"
+  },
+  "principios": {
+    "titulo": "Nuestros Principios",
+    "introduccion": "En Chequea.la, nuestra misión es clara: somos una línea de ayuda dedicada a atender incidentes web que afectan a personas defensoras de derechos humanos, periodistas, colectivos, movimientos sociales, medios y organizaciones en Latinoamérica.",
+    "comunidad": "Somos un proyecto de la comunidad latinoamericana para la comunidad latinoamericana.",
+    "quienes_somos": {
+      "titulo": "Quiénes somos",
+      "linea_ayuda": "Una línea de ayuda especializada:",
+      "descripcion": "Chequea.la fue creada para brindar una respuesta especializada a incidentes web, diseñada por quienes conocen y viven los desafíos digitales en nuestra región.",
+      "enfoque_regional": "Enfoque regional:",
+      "enfoque_regional_desc": "Entendemos las particularidades de la región, donde las represalias digitales y la censura son comunes."
+    },
+    "compromiso": {
+      "titulo": "Nuestro Compromiso",
+      "privacidad": "Privacidad y anonimato:",
+      "privacidad_desc": "Nos tomamos muy en serio la protección de la privacidad y el anonimato de quienes recurren a nosotros.",
+      "datos_minimos": "Recolección mínima de datos:",
+      "datos_minimos_desc": "Solo recabamos la información estrictamente necesaria para resolver el incidente web.",
+      "responsabilidad_datos": "Responsabilidad en el manejo de datos:",
+      "responsabilidad_datos_desc": "Te entregamos un informe con un resumen de las acciones tomadas al finalizar nuestro trabajo."
+    },
+    "acciones": {
+      "titulo": "Nuestras Acciones",
+      "destruccion_datos": "Destrucción de datos sensibles:",
+      "destruccion_datos_desc": "Una vez cumplido nuestro propósito, destruimos cualquier dato no necesario para fines estadísticos.",
+      "transparencia": "Transparencia y responsabilidad:",
+      "transparencia_desc": "Nos comprometemos a ser transparentes en todas nuestras acciones."
+    },
+    "herramientas_contacto": {
+      "titulo": "Nuestras herramientas de contacto",
+      "descripcion": "En Chequea.la, la seguridad en las comunicaciones es fundamental. Por esta razón, usamos Signal como nuestra herramienta principal.",
+      "why_signal": "¿Por qué Signal?:",
+      "why_signal_desc": "Signal es una aplicación cifrada de extremo a extremo, reconocida por su seguridad y privacidad.",
+      "proceso_comunicacion": "Proceso de comunicación:",
+      "proceso_comunicacion_desc": "Ofrecemos la posibilidad de usar correo electrónico cifrado PGP para mayor seguridad."
+    },
+    "cita": "Chequea.la es una red de apoyo creada por y para la comunidad latinoamericana, protegiendo nuestra presencia en línea con solidaridad, compromiso y las herramientas más seguras disponibles."
+  },
+
+  "home": {
+    "headerTitle": "¿Problemas con tu sitio web?",
+    "headerDescription1": "Si defiendes derechos humanos en Latinoamérica, estamos aquí para ti.",
+    "headerDescription2": "¿Tu organización o colectivo está enfrentando un incidente en su plataforma web? Escríbenos a nuestra línea de ayuda por Signal y sumaremos esfuerzos para resolverlo.",
+    "signalLink": "https://signal.me/#p/+16312974614",
+    "signalButtonText": "Solicitar ayuda en la línea Signal",
+    "checkList": "Check List",
+    "veniOSINT": "Veni OSINT",
+    "resources": "Recursos",
+    "principles": "Nuestros Principios",
+    "faqTitle": "Preguntas frecuentes",
+    "faqDescription": "En Chequea.la, sabemos que la seguridad digital es crucial para quienes defienden los derechos humanos y la libertad de expresión en línea. A continuación, respondemos algunas de las preguntas más comunes sobre nuestra línea de ayuda, cómo funcionamos y quiénes somos.",
+    "faq": [
+      {
+        "question": "¿Cómo lo hacemos?",
+        "answer": [
+          "A través de nuestro número de Signal. Escríbenos dando clic en el botón azul debajo de nuestro logo.",
+          "Explica en nuestra línea de ayuda, detalladamente, el incidente relacionado con el mal funcionamiento o la vulneración de la plataforma web.",
+          "Incluye la fecha y hora en que ocurrió el incidente, así como cualquier contexto relevante.",
+          "Toma en cuenta las últimas acciones que tomaron las personas con acceso al sitio antes del ataque, por ejemplo, instalación de programas piratas o clics a links enviados por contactos desconocidos. Todo dato es útil."
+        ]
+      },
+      {
+        "question": "¿Qué hace chequea.la?",
+        "answer": [
+          "Atendemos incidentes de seguridad en sitios web de personas defensoras de derechos humanos y medios de comunicación."
+        ]
+      },
+      {
+        "question": "¿Quiénes somos?",
+        "answer": [
+          "Personas con experiencia administrando sitios web para organizaciones sociales y medios de comunicación."
+        ]
+      },
+      {
+        "question": "¿Cómo funciona chequea.la?",
+        "answer": [
+          "Atendemos incidentes de seguridad en sitios web de personas defensoras de derechos humanos y medios de comunicación."
+        ]
+      }
+    ]
+  }
 }

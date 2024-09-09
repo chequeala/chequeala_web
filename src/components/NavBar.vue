@@ -3,9 +3,9 @@
     <div class="container py-1 d-flex align-items-center">
       <div class="text-start">
         <a class="navbar-brand fw-bold fs-3 me-0" href="/">
-          <i class="bi bi-search-heart pe-2"></i>Chequea.la
+          <i class="bi bi-search-heart pe-2"></i>{{ $t('navbar.brand') }}
         </a>
-        <form class="form-inline d-inline-flex form-select-xs align-bottom">
+        <form class="form-inline d-inline-flex form-select-xs">
           <select
             class="form-control form-control-sm"
             v-model="selectedLanguage"
@@ -18,7 +18,7 @@
         </form>
       </div>
       <span class="navbar-text d-none d-md-block">
-        Atendemos incidentes web de organizaciones en Latinoamérica.
+        {{ $t('navbar.description') }}
       </span>
     </div>
   </nav>

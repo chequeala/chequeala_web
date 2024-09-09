@@ -16,7 +16,6 @@ import pt from './locales/pt.json'
 const savedLocale = localStorage.getItem('locale') || 'es' // 'es' es el idioma por defecto
 
 const i18n = createI18n({
-  // locale: 'es',
   locale: savedLocale,
   fallbackLocale: 'es',
   messages: {

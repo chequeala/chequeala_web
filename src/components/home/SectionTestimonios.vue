@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid green-section pt-5 pb-3">
     <section id="testimonios" class="container">
-      <h3 class="text-center mb-4">Testimonios</h3>
+      <h3 class="text-center mb-4">{{ $t('testimonios.titulo') }}</h3>
 
       <div id="carouselExample" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -160,7 +160,7 @@
           data-bs-slide="prev"
         >
           <i class="bi bi-arrow-left-short"></i>
-          <span class="visually-hidden">Previous</span>
+          <span class="visually-hidden">{{ $t('testimonios.anterior') }}</span>
         </button>
         <button
           class="btn mt-1"
@@ -169,7 +169,7 @@
           data-bs-slide="next"
         >
           <i class="bi bi-arrow-right-short"></i>
-          <span class="visually-hidden">Next</span>
+          <span class="visually-hidden">{{ $t('testimonios.siguiente') }}</span>
         </button>
       </div>
     </section>
