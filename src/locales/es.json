@@ -2,6 +2,9 @@
   "title": "Lista de Tareas de Seguridad Web",
   "exportPdf": "Exportar PDF",
   "exportPdfTooltip": "Descargar el checklist en formato PDF",
+  "reset": "Reiniciar",
+  "resetTooltip": "Reiniciar todas las recomendaciónes",
+
   "wordpressSwitch": "Mostrar tareas de WordPress",
   "showInfo": "Mostrar material de referencia",
   "hideInfo": "Ocultar material de referencia",
@@ -49,26 +52,7 @@
       "isWordpress": false
     },
     {
-      "id": 11,
-      "titulo": "Actualiza WordPress regularmente",
-      "descripcion": "Mantén tu instalación de WordPress actualizada para protegerte contra vulnerabilidades.",
-      "detalles": "Actualiza WordPress a la última versión y asegúrate de que los temas y plugins también estén actualizados.",
-      "tips": [
-        "Configura actualizaciones automáticas.",
-        "Revisa regularmente las actualizaciones disponibles.",
-        "Lee las notas de la versión antes de actualizar."
-      ],
-      "enlaces": [
-        {
-          "url": "https://example.com/wordpress-updates",
-          "texto": "Más sobre actualizaciones de WordPress"
-        },
-        { "url": "https://example.com/wordpress-security", "texto": "Seguridad en WordPress" }
-      ],
-      "isWordpress": true
-    },
-    {
-      "id": 12,
+      "id": 3,
       "titulo": "Utiliza un firewall de aplicaciones web",
       "descripcion": "Implementa un firewall para proteger tu sitio de ataques y amenazas.",
       "detalles": "Un firewall puede bloquear tráfico malicioso y proteger tu sitio de vulnerabilidades conocidas.",
@@ -87,7 +71,7 @@
       "isWordpress": false
     },
     {
-      "id": 13,
+      "id": 4,
       "titulo": "Realiza auditorías de seguridad periódicas",
       "descripcion": "Revisa regularmente la seguridad de tu sitio para identificar y corregir vulnerabilidades.",
       "detalles": "Las auditorías pueden detectar problemas de seguridad que podrían ser explotados por atacantes.",
@@ -109,7 +93,7 @@
       "isWordpress": false
     },
     {
-      "id": 14,
+      "id": 5,
       "titulo": "Configura permisos de archivos correctamente",
       "descripcion": "Asegúrate de que los permisos de archivos en tu servidor estén configurados correctamente para evitar accesos no autorizados.",
       "detalles": "Los permisos incorrectos pueden permitir a los atacantes modificar o eliminar archivos importantes.",
@@ -131,7 +115,7 @@
       "isWordpress": false
     },
     {
-      "id": 15,
+      "id": 6,
       "titulo": "Desactiva el registro de errores en producción",
       "descripcion": "No dejes que los errores se registren públicamente en tu sitio en producción.",
       "detalles": "El registro de errores puede exponer información sensible a los atacantes.",
@@ -147,7 +131,7 @@
       "isWordpress": false
     },
     {
-      "id": 16,
+      "id": 7,
       "titulo": "Implementa autenticación de dos factores (2FA)",
       "descripcion": "Agrega una capa adicional de seguridad a tus cuentas mediante autenticación de dos factores.",
       "detalles": "La 2FA requiere algo que sabes (contraseña) y algo que tienes (código de autenticación).",
@@ -163,7 +147,7 @@
       "isWordpress": false
     },
     {
-      "id": 17,
+      "id": 8,
       "titulo": "Protege tus formularios con CAPTCHA",
       "descripcion": "Utiliza CAPTCHA en tus formularios para evitar envíos automáticos y bots.",
       "detalles": "CAPTCHA ayuda a asegurar que los formularios sean completados por humanos y no por bots.",
@@ -179,7 +163,26 @@
       "isWordpress": false
     },
     {
-      "id": 18,
+      "id": 21,
+      "titulo": "Actualiza WordPress regularmente",
+      "descripcion": "Mantén tu instalación de WordPress actualizada para protegerte contra vulnerabilidades.",
+      "detalles": "Actualiza WordPress a la última versión y asegúrate de que los temas y plugins también estén actualizados.",
+      "tips": [
+        "Configura actualizaciones automáticas.",
+        "Revisa regularmente las actualizaciones disponibles.",
+        "Lee las notas de la versión antes de actualizar."
+      ],
+      "enlaces": [
+        {
+          "url": "https://example.com/wordpress-updates",
+          "texto": "Más sobre actualizaciones de WordPress"
+        },
+        { "url": "https://example.com/wordpress-security", "texto": "Seguridad en WordPress" }
+      ],
+      "isWordpress": true
+    },
+    {
+      "id": 22,
       "titulo": "Utiliza plugins y temas de fuentes confiables",
       "descripcion": "Instala solo plugins y temas de proveedores confiables y revisa sus actualizaciones.",
       "detalles": "Los plugins y temas de fuentes no confiables pueden introducir vulnerabilidades en tu sitio.",
@@ -195,7 +198,7 @@
       "isWordpress": true
     },
     {
-      "id": 19,
+      "id": 23,
       "titulo": "Configura correctamente los permisos de usuario en WordPress",
       "descripcion": "Asegúrate de que los permisos de usuario en WordPress estén configurados correctamente.",
       "detalles": "Los permisos incorrectos pueden dar acceso no autorizado a áreas críticas del sitio.",
@@ -214,7 +217,7 @@
       "isWordpress": true
     },
     {
-      "id": 20,
+      "id": 24,
       "titulo": "Desactiva la edición de archivos desde el panel de administración",
       "descripcion": "Desactiva la capacidad de editar archivos de temas y plugins desde el panel de administración.",
       "detalles": "Esto puede prevenir que los atacantes editen archivos críticos si obtienen acceso al panel.",
@@ -236,7 +239,7 @@
       "isWordpress": true
     },
     {
-      "id": 21,
+      "id": 25,
       "titulo": "Utiliza HTTPS en lugar de HTTP",
       "descripcion": "Asegúrate de que tu sitio web utilice HTTPS para cifrar la comunicación entre el navegador y el servidor.",
       "detalles": "HTTPS asegura que los datos enviados entre el usuario y el servidor estén cifrados.",
@@ -252,7 +255,7 @@
       "isWordpress": true
     },
     {
-      "id": 22,
+      "id": 26,
       "titulo": "Monitorea y revisa los registros del servidor",
       "descripcion": "Revisa regularmente los registros del servidor para detectar actividades sospechosas.",
       "detalles": "Los registros pueden mostrar intentos de acceso no autorizado o problemas de seguridad.",
@@ -268,7 +271,7 @@
       "isWordpress": true
     },
     {
-      "id": 23,
+      "id": 27,
       "titulo": "Desactiva la opción de registro de errores en producción",
       "descripcion": "En un entorno de producción, asegúrate de que el registro de errores no esté habilitado para los usuarios finales.",
       "detalles": "Evita exponer información sensible que pueda ser útil para un atacante.",
@@ -287,7 +290,7 @@
       "isWordpress": true
     },
     {
-      "id": 24,
+      "id": 28,
       "titulo": "Restringe el acceso a wp-admin",
       "descripcion": "Limita el acceso al directorio wp-admin solo a IPs específicas o utiliza autenticación adicional.",
       "detalles": "Esto puede reducir la posibilidad de ataques de fuerza bruta y accesos no autorizados.",

@@ -2,6 +2,8 @@
   "title": "Lista de Tarefas de Segurança Web",
   "exportPdf": "Exportar PDF",
   "exportPdfTooltip": "Baixar a lista de verificação em formato PDF",
+  "reset": "Reinício",
+  "resetTooltip": "Redefinir todas as recomendações",
   "wordpressSwitch": "Mostrar tarefas de WordPress",
   "showInfo": "Mostrar material de referência",
   "hideInfo": "Ocultar material de referência",
@@ -13,8 +15,8 @@
     {
       "id": 1,
       "titulo": "Faça backups regulares",
-      "descripcion": "Certifique-se de que seu site realiza backups regularmente para evitar perda de dados.",
-      "detalles": "Faça backup diariamente ou semanalmente, dependendo da atualização do conteúdo.",
+      "descripcion": "Certifique-se de que seu site faça backups regularmente para evitar a perda de dados.",
+      "detalles": "Faça um backup diário ou semanal dependendo da atualização do conteúdo.",
       "tips": [
         "Use um plugin confiável para backups.",
         "Armazene backups em um local seguro.",
@@ -29,43 +31,30 @@
     {
       "id": 2,
       "titulo": "Use senhas fortes",
-      "descripcion": "Use senhas fortes e únicas para contas de administrador e usuário.",
+      "descripcion": "Utilize senhas fortes e únicas para contas de administrador e usuário.",
       "detalles": "Uma senha segura deve incluir uma combinação de letras, números e caracteres especiais.",
       "tips": [
         "Use um gerenciador de senhas.",
-        "Mude suas senhas regularmente.",
-        "Não use a mesma senha em vários sites."
+        "Troque suas senhas regularmente.",
+        "Não use a mesma senha em diferentes sites."
       ],
       "enlaces": [
-        { "url": "https://example.com/strong-passwords", "texto": "Dicas para senhas fortes" },
-        { "url": "https://example.com/password-managers", "texto": "Gerenciadores de senhas" }
+        {
+          "url": "https://example.com/strong-passwords",
+          "texto": "Dicas para senhas fortes"
+        },
+        {
+          "url": "https://example.com/password-managers",
+          "texto": "Gerenciadores de senhas"
+        }
       ],
       "isWordpress": false
     },
     {
-      "id": 11,
-      "titulo": "Mantenha o WordPress atualizado",
-      "descripcion": "Mantenha sua instalação do WordPress atualizada para proteger contra vulnerabilidades.",
-      "detalles": "Atualize o WordPress para a versão mais recente e verifique se os temas e plugins também estão atualizados.",
-      "tips": [
-        "Configure atualizações automáticas.",
-        "Verifique regularmente as atualizações disponíveis.",
-        "Leia as notas de versão antes de atualizar."
-      ],
-      "enlaces": [
-        {
-          "url": "https://example.com/wordpress-updates",
-          "texto": "Mais sobre atualizações do WordPress"
-        },
-        { "url": "https://example.com/wordpress-security", "texto": "Segurança no WordPress" }
-      ],
-      "isWordpress": true
-    },
-    {
-      "id": 12,
-      "titulo": "Use um firewall de aplicativos web",
-      "descripcion": "Implemente um firewall para proteger seu site contra ataques e ameaças.",
-      "detalles": "Um firewall pode bloquear tráfego malicioso e proteger seu site contra vulnerabilidades conhecidas.",
+      "id": 3,
+      "titulo": "Utilize um firewall de aplicativos web",
+      "descripcion": "Implemente um firewall para proteger seu site de ataques e ameaças.",
+      "detalles": "Um firewall pode bloquear tráfego malicioso e proteger seu site de vulnerabilidades conhecidas.",
       "tips": [
         "Escolha um firewall confiável.",
         "Configure regras específicas para seu site.",
@@ -73,19 +62,22 @@
       ],
       "enlaces": [
         { "url": "https://example.com/web-firewall", "texto": "Mais sobre firewalls" },
-        { "url": "https://example.com/firewall-tips", "texto": "Dicas para configurar um firewall" }
+        {
+          "url": "https://example.com/firewall-tips",
+          "texto": "Dicas para configurar um firewall"
+        }
       ],
       "isWordpress": false
     },
     {
-      "id": 13,
-      "titulo": "Faça auditorias de segurança periódicas",
+      "id": 4,
+      "titulo": "Realize auditorias de segurança periódicas",
       "descripcion": "Revise regularmente a segurança do seu site para identificar e corrigir vulnerabilidades.",
-      "detalles": "Auditorias podem detectar problemas de segurança que podem ser explorados por atacantes.",
+      "detalles": "As auditorias podem detectar problemas de segurança que podem ser explorados por atacantes.",
       "tips": [
         "Contrate um especialista em segurança.",
-        "Use ferramentas de verificação de segurança.",
-        "Revise relatórios de auditoria e tome providências."
+        "Use ferramentas de escaneamento de segurança.",
+        "Revise os relatórios de auditoria e tome providências."
       ],
       "enlaces": [
         {
@@ -94,18 +86,18 @@
         },
         {
           "url": "https://example.com/security-scanners",
-          "texto": "Ferramentas de verificação de segurança"
+          "texto": "Ferramentas para escanear segurança"
         }
       ],
       "isWordpress": false
     },
     {
-      "id": 14,
+      "id": 5,
       "titulo": "Configure permissões de arquivos corretamente",
-      "descripcion": "Certifique-se de que as permissões de arquivos no seu servidor estejam configuradas corretamente para evitar acessos não autorizados.",
+      "descripcion": "Certifique-se de que as permissões de arquivos em seu servidor estejam configuradas corretamente para evitar acessos não autorizados.",
       "detalles": "Permissões incorretas podem permitir que atacantes modifiquem ou excluam arquivos importantes.",
       "tips": [
-        "Defina permissões de arquivos adequadas.",
+        "Estabeleça permissões de arquivo adequadas.",
         "Não use permissões excessivas como 777.",
         "Revise as permissões regularmente."
       ],
@@ -122,92 +114,67 @@
       "isWordpress": false
     },
     {
-      "id": 15,
+      "id": 6,
       "titulo": "Desative o registro de erros em produção",
-      "descripcion": "Não deixe que erros sejam registrados publicamente no ambiente de produção.",
-      "detalles": "Isso pode evitar a exposição de informações sensíveis que podem ser usadas por atacantes.",
+      "descripcion": "Não permita que erros sejam registrados publicamente em seu site em produção.",
+      "detalles": "O registro de erros pode expor informações sensíveis a atacantes.",
       "tips": [
-        "Configure wp-config.php para não exibir erros.",
-        "Certifique-se de que os erros são registrados em um local seguro.",
-        "Revise as configurações de erro regularmente."
+        "Configure o registro de erros apenas em ambientes de desenvolvimento.",
+        "Certifique-se de que os erros não sejam exibidos para os usuários.",
+        "Revise os registros de erros em um local seguro."
+      ],
+      "enlaces": [
+        { "url": "https://example.com/error-logging", "texto": "Mais sobre registro de erros" },
+        { "url": "https://example.com/error-logs", "texto": "Gerenciamento de registros de erros" }
+      ],
+      "isWordpress": false
+    },
+    {
+      "id": 7,
+      "titulo": "Implemente autenticação de dois fatores (2FA)",
+      "descripcion": "Adicione uma camada adicional de segurança às suas contas por meio de autenticação de dois fatores.",
+      "detalles": "A 2FA exige algo que você sabe (senha) e algo que você tem (código de autenticação).",
+      "tips": [
+        "Habilite 2FA em todas as contas importantes.",
+        "Use aplicativos de autenticação em vez de SMS.",
+        "Mantenha seus métodos de 2FA seguros."
+      ],
+      "enlaces": [
+        { "url": "https://example.com/2fa", "texto": "Mais sobre autenticação de dois fatores" },
+        { "url": "https://example.com/2fa-apps", "texto": "Aplicativos de autenticação" }
+      ],
+      "isWordpress": false
+    },
+    {
+      "id": 8,
+      "titulo": "Proteja seus formulários com CAPTCHA",
+      "descripcion": "Use CAPTCHA em seus formulários para evitar envios automáticos e bots.",
+      "detalles": "CAPTCHA ajuda a garantir que os formulários sejam preenchidos por humanos e não por bots.",
+      "tips": [
+        "Integre CAPTCHA em todos os formulários.",
+        "Use reCAPTCHA ou alternativas confiáveis.",
+        "Configure CAPTCHA para uma experiência de usuário ideal."
+      ],
+      "enlaces": [
+        { "url": "https://example.com/captcha", "texto": "Mais sobre CAPTCHA" },
+        { "url": "https://example.com/recaptcha", "texto": "Google reCAPTCHA" }
+      ],
+      "isWordpress": false
+    },
+    {
+      "id": 21,
+      "titulo": "Atualize o WordPress regularmente",
+      "descripcion": "Mantenha sua instalação do WordPress atualizada para se proteger contra vulnerabilidades.",
+      "detalles": "Atualize o WordPress para a versão mais recente e certifique-se de que os temas e plugins também estejam atualizados.",
+      "tips": [
+        "Configure atualizações automáticas.",
+        "Verifique regularmente as atualizações disponíveis.",
+        "Leia as notas de versão antes de atualizar."
       ],
       "enlaces": [
         {
-          "url": "https://example.com/error-logging-wordpress",
-          "texto": "Mais sobre registro de erros em WordPress"
-        },
-        { "url": "https://example.com/wordpress-security", "texto": "Segurança no WordPress" }
-      ],
-      "isWordpress": true
-    },
-    {
-      "id": 16,
-      "titulo": "Desative a edição de arquivos do painel de administração",
-      "descripcion": "Desative a capacidade de editar arquivos de temas e plugins do painel de administração.",
-      "detalles": "Isso pode evitar que atacantes editem arquivos críticos se obtiverem acesso ao painel.",
-      "tips": [
-        "Adicione define('DISALLOW_FILE_EDIT', true); no wp-config.php.",
-        "Revise os arquivos e permissões após alterações.",
-        "Monitore a atividade do painel de administração."
-      ],
-      "enlaces": [
-        {
-          "url": "https://example.com/disable-file-edit",
-          "texto": "Mais sobre desativar edição de arquivos"
-        },
-        {
-          "url": "https://example.com/wordpress-security",
-          "texto": "Segurança no painel de administração"
-        }
-      ],
-      "isWordpress": true
-    },
-    {
-      "id": 17,
-      "titulo": "Use HTTPS em vez de HTTP",
-      "descripcion": "Certifique-se de que seu site utilize HTTPS para criptografar a comunicação entre o navegador e o servidor.",
-      "detalles": "HTTPS garante que os dados enviados entre o usuário e o servidor estejam criptografados.",
-      "tips": [
-        "Obtenha um certificado SSL para seu site.",
-        "Configure redirecionamentos de HTTP para HTTPS.",
-        "Verifique se todos os recursos do site são carregados via HTTPS."
-      ],
-      "enlaces": [
-        { "url": "https://example.com/https", "texto": "Mais sobre HTTPS" },
-        { "url": "https://example.com/ssl-certificates", "texto": "Certificados SSL" }
-      ],
-      "isWordpress": true
-    },
-    {
-      "id": 18,
-      "titulo": "Monitore e revise os registros do servidor",
-      "descripcion": "Revise regularmente os registros do servidor para detectar atividades suspeitas.",
-      "detalles": "Os registros podem mostrar tentativas de acesso não autorizado ou problemas de segurança.",
-      "tips": [
-        "Configure alertas para eventos críticos.",
-        "Revise os registros com frequência.",
-        "Use ferramentas de monitoramento de registros."
-      ],
-      "enlaces": [
-        { "url": "https://example.com/server-logs", "texto": "Mais sobre registros do servidor" },
-        { "url": "https://example.com/log-monitoring", "texto": "Monitoramento de registros" }
-      ],
-      "isWordpress": true
-    },
-    {
-      "id": 19,
-      "titulo": "Desative a opção de registro de erros em produção",
-      "descripcion": "Em um ambiente de produção, certifique-se de que o registro de erros não esteja habilitado para os usuários finais.",
-      "detalles": "Evite expor informações sensíveis que possam ser úteis para um atacante.",
-      "tips": [
-        "Configure wp-config.php para não exibir erros.",
-        "Certifique-se de que os erros são registrados em um local seguro.",
-        "Revise as configurações de erro regularmente."
-      ],
-      "enlaces": [
-        {
-          "url": "https://example.com/error-logging-wordpress",
-          "texto": "Mais sobre registro de erros em WordPress"
+          "url": "https://example.com/wordpress-updates",
+          "texto": "Saiba mais sobre atualizações do WordPress"
         },
         {
           "url": "https://example.com/wordpress-security",
@@ -217,23 +184,155 @@
       "isWordpress": true
     },
     {
-      "id": 20,
-      "titulo": "Evite o uso de plugins desatualizados",
-      "descripcion": "Certifique-se de que todos os plugins usados estejam atualizados e sejam suportados pelos desenvolvedores.",
-      "detalles": "Plugins desatualizados podem conter vulnerabilidades que podem ser exploradas.",
+      "id": 22,
+      "titulo": "Utilize plugins e temas de fontes confiáveis",
+      "descripcion": "Instale apenas plugins e temas de fornecedores confiáveis e verifique suas atualizações.",
+      "detalles": "Plugins e temas de fontes não confiáveis podem introduzir vulnerabilidades em seu site.",
       "tips": [
-        "Remova plugins não utilizados.",
-        "Verifique a compatibilidade e suporte dos plugins.",
-        "Atualize os plugins regularmente."
+        "Baixe plugins e temas apenas de fontes oficiais.",
+        "Verifique as avaliações e classificações.",
+        "Atualize regularmente e remova os que não usa."
       ],
       "enlaces": [
         {
-          "url": "https://example.com/plugin-updates",
-          "texto": "Mais sobre atualizações de plugins"
+          "url": "https://example.com/plugins-themes",
+          "texto": "Saiba mais sobre plugins e temas"
         },
         {
-          "url": "https://example.com/plugin-security",
-          "texto": "Segurança de plugins"
+          "url": "https://example.com/theme-security",
+          "texto": "Segurança em temas do WordPress"
+        }
+      ],
+      "isWordpress": true
+    },
+    {
+      "id": 23,
+      "titulo": "Configure corretamente as permissões de usuário no WordPress",
+      "descripcion": "Certifique-se de que as permissões de usuário no WordPress estejam configuradas corretamente.",
+      "detalles": "Permissões incorretas podem dar acesso não autorizado a áreas críticas do site.",
+      "tips": [
+        "Verifique os papéis e permissões dos usuários regularmente.",
+        "Não use papéis de administrador desnecessariamente.",
+        "Configure permissões personalizadas se necessário."
+      ],
+      "enlaces": [
+        {
+          "url": "https://example.com/user-permissions",
+          "texto": "Saiba mais sobre permissões de usuário"
+        },
+        {
+          "url": "https://example.com/wordpress-user-roles",
+          "texto": "Papéis de usuário no WordPress"
+        }
+      ],
+      "isWordpress": true
+    },
+    {
+      "id": 24,
+      "titulo": "Desative a edição de arquivos a partir do painel de administração",
+      "descripcion": "Desative a capacidade de editar arquivos de temas e plugins a partir do painel de administração.",
+      "detalles": "Isso pode impedir que atacantes editem arquivos críticos se obterem acesso ao painel.",
+      "tips": [
+        "Adicione define('DISALLOW_FILE_EDIT', true); em wp-config.php.",
+        "Verifique os arquivos e permissões após alterações.",
+        "Monitore a atividade do painel de administração."
+      ],
+      "enlaces": [
+        {
+          "url": "https://example.com/disable-file-edit",
+          "texto": "Saiba mais sobre desativar a edição de arquivos"
+        },
+        {
+          "url": "https://example.com/wordpress-security",
+          "texto": "Segurança no painel de administração"
+        }
+      ],
+      "isWordpress": true
+    },
+    {
+      "id": 25,
+      "titulo": "Utilize HTTPS em vez de HTTP",
+      "descripcion": "Certifique-se de que seu site use HTTPS para criptografar a comunicação entre o navegador e o servidor.",
+      "detalles": "HTTPS garante que os dados enviados entre o usuário e o servidor estejam criptografados.",
+      "tips": [
+        "Obtenha um certificado SSL para seu site.",
+        "Configure redirecionamentos de HTTP para HTTPS.",
+        "Verifique se todos os recursos do site são carregados via HTTPS."
+      ],
+      "enlaces": [
+        {
+          "url": "https://example.com/https",
+          "texto": "Saiba mais sobre HTTPS"
+        },
+        {
+          "url": "https://example.com/ssl-certificates",
+          "texto": "Certificados SSL"
+        }
+      ],
+      "isWordpress": true
+    },
+    {
+      "id": 26,
+      "titulo": "Monitore e revise os registros do servidor",
+      "descripcion": "Revise regularmente os registros do servidor para detectar atividades suspeitas.",
+      "detalles": "Os registros podem mostrar tentativas de acesso não autorizado ou problemas de segurança.",
+      "tips": [
+        "Configure alertas para eventos críticos.",
+        "Revise os registros com frequência.",
+        "Use ferramentas de monitoramento de registros."
+      ],
+      "enlaces": [
+        {
+          "url": "https://example.com/server-logs",
+          "texto": "Saiba mais sobre registros do servidor"
+        },
+        {
+          "url": "https://example.com/log-monitoring",
+          "texto": "Monitoramento de registros"
+        }
+      ],
+      "isWordpress": true
+    },
+    {
+      "id": 27,
+      "titulo": "Desative a opção de registro de erros em produção",
+      "descripcion": "Em um ambiente de produção, certifique-se de que o registro de erros não esteja habilitado para os usuários finais.",
+      "detalles": "Evite expor informações sensíveis que possam ser úteis para um atacante.",
+      "tips": [
+        "Configure wp-config.php para não mostrar erros.",
+        "Certifique-se de que os erros sejam registrados em um local seguro.",
+        "Verifique se não há informações sensíveis expostas."
+      ],
+      "enlaces": [
+        {
+          "url": "https://example.com/error-logging-wordpress",
+          "texto": "Saiba mais sobre o registro de erros no WordPress"
+        },
+        {
+          "url": "https://example.com/wordpress-security",
+          "texto": "Segurança no WordPress"
+        }
+      ],
+      "isWordpress": true
+    },
+    {
+      "id": 28,
+      "titulo": "Restringir o acesso ao wp-admin",
+      "descripcion": "Limite o acesso ao diretório wp-admin apenas para IPs específicos ou utilize autenticação adicional.",
+      "detalles": "Isso pode reduzir a possibilidade de ataques de força bruta e acessos não autorizados.",
+      "tips": [
+        "Configure regras no arquivo .htaccess.",
+        "Use autenticação básica para o wp-admin.",
+        "Permita acesso apenas para IPs conhecidos."
+      ],
+      "enlaces": [
+        {
+          "url": "https://example.com/restrict-wp-admin",
+          "texto": "Saiba mais sobre restrição de wp-admin"
+        },
+        {
+          "url": "https://example.com/wordpress-security",
+          "texto": "Segurança no wp-admin"
         }
       ],
       "isWordpress": true

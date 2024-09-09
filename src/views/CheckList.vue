@@ -4,13 +4,22 @@
       <h1 class="text-center mb-4">{{ $t('title') }}</h1>
 
       <div class="d-flex justify-content-between mb-4">
-        <button
-          class="btn btn-light btn-sm d-flex align-items-center"
-          @click="exportarPDF"
-          :title="$t('exportPdfTooltip')"
-        >
-          <i class="bi bi-file-earmark-pdf me-2"></i> {{ $t('exportPdf') }}
-        </button>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button
+            class="btn btn-light btn-sm d-flex align-items-center"
+            @click="exportarPDF"
+            :title="$t('exportPdfTooltip')"
+          >
+            <i class="bi bi-file-earmark-pdf me-2"></i> {{ $t('exportPdf') }}
+          </button>
+          <button
+            class="btn btn-light btn-sm d-flex text-start"
+            @click="reiniciarTareas"
+            :title="$t('resetTooltip')"
+          >
+            <i class="bi bi-arrow-counterclockwise me-2"></i> {{ $t('reset') }}
+          </button>
+        </div>
 
         <div class="form-check form-switch">
           <input
@@ -161,6 +170,12 @@ export default {
       } else {
         this.tareas = this.$i18n.messages[this.$i18n.locale].recommendations
       }
+    },
+    // Método para reiniciar las tareas
+    reiniciarTareas() {
+      // Opción para confirmar el reinicio
+      localStorage.removeItem('tareas') // Elimina las tareas del localStorage
+      this.loadTareasFromLocalStorage() // Recarga las tareas desde la fuente original
     }
   },
   mounted() {
