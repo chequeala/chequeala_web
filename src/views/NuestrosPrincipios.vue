@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid green-section py-5">
     <div class="container">
-      <div class="card shadow-lg">
+      <div class="card">
         <div class="card-body p-md-5">
           <h1 class="bd-title mb-4 display-5 text-center">{{ $t('principios.titulo') }}</h1>
           <p class="bd-lead text-muted text-center mb-4">
@@ -28,11 +28,7 @@
 
             <div class="col-md-6">
               <!-- Placeholder image -->
-              <img
-                src="https://via.placeholder.com/500x300"
-                alt="Placeholder"
-                class="img-fluid rounded shadow"
-              />
+              <img src="@/assets/team.svg" alt="Placeholder" class="img-fluid" />
             </div>
           </div>
 
@@ -104,10 +100,6 @@ li {
 .card {
   border: none;
   border-radius: 0.75rem;
-}
-
-.card-body {
-  background-color: #f1f6f1;
 }
 
 h1 {

@@ -1,5 +1,6 @@
 <script setup>
 import SectionTestimonios from '@/components/home/SectionTestimonios.vue'
+import PreguntasFrecuentes from '@/components/home/PreguntasFrecuentes.vue'
 </script>
 
 <template>
@@ -77,134 +78,7 @@ import SectionTestimonios from '@/components/home/SectionTestimonios.vue'
     </header>
   </div>
   <div class="container-fluid py-5">
-    <section id="faq" class="container text-center">
-      <div class="row">
-        <div class="col-md-4 text-start fw-light">
-          <h3>{{ $t('home.faqTitle') }}</h3>
-          <p>
-            {{ $t('home.faqDescription') }}
-          </p>
-        </div>
-        <div class="col-md-8 text-start">
-          <div class="accordion accordion-flush" id="accordionExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button
-                  class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
-                >
-                  ¿Cómo lo hacemos?
-                </button>
-              </h2>
-              <div
-                id="collapseOne"
-                class="accordion-collapse collapse show"
-                data-bs-parent="#accordionExample"
-              >
-                <div class="accordion-body">
-                  <ul>
-                    <li>
-                      A través de nuestro número de Signal. Escribenos dando clic en el botón azúl
-                      debajo de nuestro logo.
-                    </li>
-                    <li>
-                      Explica en nuestra linea de ayuda, detalladamente, el incidente relacionado
-                      con el mal funcionamiento o la vulneración de la plataforma web.
-                    </li>
-                    <li>
-                      Incluye la fecha y hora en que ocurrió el incidente, así como cualquier
-                      contexto relevante.
-                    </li>
-                    <li>
-                      Toma en cuenta las últimas acciones que tomaron las personas con acceso al
-                      sitio antes del ataque, por ejemplo, instalación de programas piratas o clics
-                      a links enviados por contactos desconocidos. Todo dato es útil.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo"
-                  aria-expanded="false"
-                  aria-controls="collapseTwo"
-                >
-                  ¿Qué hace chequea.la?
-                </button>
-              </h2>
-              <div
-                id="collapseTwo"
-                class="accordion-collapse collapse"
-                data-bs-parent="#accordionExample"
-              >
-                <div class="accordion-body">
-                  Atendemos incidentes de seguridad en sitios web de personas defensoras de derechos
-                  humanos y medios de comunicación.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseThree"
-                  aria-expanded="false"
-                  aria-controls="collapseThree"
-                >
-                  ¿Quienés somos?
-                </button>
-              </h2>
-              <div
-                id="collapseThree"
-                class="accordion-collapse collapse"
-                data-bs-parent="#accordionExample"
-              >
-                <div class="accordion-body">
-                  Personas con experiencia administrando sitios web para organizaciones sociales y
-                  medios de comunicación.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseFour"
-                  aria-expanded="false"
-                  aria-controls="collapseFour"
-                >
-                  ¿Cómo funciona chequea.la?
-                </button>
-              </h2>
-              <div
-                id="collapseFour"
-                class="accordion-collapse collapse"
-                data-bs-parent="#accordionExample"
-              >
-                <div class="accordion-body">
-                  Atendemos incidentes de seguridad en sitios web de personas defensoras de derechos
-                  humanos y medios de comunicación.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <PreguntasFrecuentes />
   </div>
   <SectionTestimonios />
 </template>
@@ -235,15 +109,5 @@ header .card:hover {
 header .card:hover > .card-body i {
   transition-duration: 1s;
   color: #fff;
-}
-#faq .accordion-header button {
-  font-weight: bold;
-}
-#faq .accordion-button:not(.collapsed) {
-  background-color: transparent;
-  color: var(--vt-blue);
-}
-#faq .accordion-button:focus {
-  box-shadow: none;
 }
 </style>
