@@ -47,7 +47,7 @@ import PreguntasFrecuentes from '@/components/home/PreguntasFrecuentes.vue'
             <div class="card-body">
               <i class="bi bi-diagram-3"></i>
               <h4>
-                <a href="https://veni.chequea.la" class="stretched-link">{{
+                <a href="https://veni.chequea.la" target="_blank" class="stretched-link">{{
                   $t('home.veniOSINT')
                 }}</a>
               </h4>

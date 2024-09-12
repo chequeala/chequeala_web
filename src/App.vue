@@ -10,7 +10,7 @@ import MyFooter from './components/MyFooter.vue'
     <RouterLink to="/about">About</RouterLink>
   </header> -->
 
-  <div class="container-fluid">
+  <div class="container-fluid text-wrap">
     <NavBar />
     <RouterView />
     <MyFooter />
