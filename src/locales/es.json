@@ -328,11 +328,6 @@
     "descripcion": "¡Pronto estaremos listos! Estamos trabajando en nuevas herramientas y recursos informativos que te ayudarán a mantener tu web segura. Vuelve pronto para descubrir todo lo que hemos preparado. ¡Gracias por tu paciencia!",
     "altImagen": "En construcción, próximamente"
   },
-  "testimonios": {
-    "titulo": "Testimonios",
-    "anterior": "Anterior",
-    "siguiente": "Siguiente"
-  },
   "principios": {
     "titulo": "Nuestros Principios",
     "introduccion": "En Chequea.la, nuestra misión es clara: somos una línea de ayuda dedicada a atender incidentes web que afectan a personas defensoras de derechos humanos, periodistas, colectivos, movimientos sociales, medios y organizaciones en Latinoamérica.",
@@ -410,6 +405,55 @@
         "answer": [
           "Atendemos incidentes de seguridad en sitios web de personas defensoras de derechos humanos y medios de comunicación."
         ]
+      }
+    ]
+  },
+  "testimonios": {
+    "titulo": "Testimonios",
+    "anterior": "Anterior",
+    "siguiente": "Siguiente",
+    "items": [
+      {
+        "organizacion": "People in Need América Latina",
+        "mensaje": "El aporte a nuestros beneficiarios y aliados claves es invaluable. Gracias al equipo de Chequea.la contamos con plataformas web seguras...",
+        "autor": "PIN",
+        "fecha": "Agosto 2024"
+      },
+      {
+        "organizacion": "PostData Nicaragua",
+        "mensaje": "PostData Nicaragua está lista para avanzar en la cobertura mediática. Gracias al equipo de Chequea.la contamos con un sitio web seguro...",
+        "autor": "PostData",
+        "fecha": "Agosto 2024"
+      },
+      {
+        "organizacion": "FLED",
+        "mensaje": "Chequea.la es un recurso esencial, oportuno y necesario, proporcionando prevención y respuesta a incidentes...",
+        "autor": "FLED",
+        "fecha": "Agosto 2024"
+      },
+      {
+        "organizacion": "NICASEC",
+        "mensaje": "Chequea.la para NICASEC es un aliado invaluable, una herramienta de prevención, atención y recuperación...",
+        "autor": "NICASEC",
+        "fecha": "Agosto 2024"
+      },
+      {
+        "organizacion": "VERSÁTIL",
+        "mensaje": "Tras entregar sitios web desarrollados para sociedad civil, tememos los riesgos que puedan afectarles...",
+        "autor": "VERSÁTIL",
+        "fecha": "Agosto 2024"
+      },
+      {
+        "organizacion": "Nicaragua Investiga",
+        "mensaje": "Gracias al apoyo del equipo de Chequea.la nuestro sitio web se encuentra funcionando de manera óptima...",
+        "autor": "Nicaragua Investiga",
+        "fecha": "Septiembre 2024"
+      },
+      {
+        "organizacion": "RIDHE",
+        "mensaje": "En RIDHE colaborar con cheque.la nos ha ayudado a mejorar nuestra seguridad y sostenibilidad digital como organización. De este modo hemos podido reforzar nuestra presencia web y, por tanto, ampliar nuestra capacidad de trabajo por los Derechos Humanos",
+        "autor": "RIDHE",
+        "fecha": "Septiembre 2024"
       }
     ]
   }
