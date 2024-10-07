@@ -171,11 +171,20 @@ export default {
         this.tareas = this.$i18n.messages[this.$i18n.locale].recommendations
       }
     },
-    // Método para reiniciar las tareas
+    // Método para reiniciar las tareas sin confirmación
     reiniciarTareas() {
-      // Opción para confirmar el reinicio
-      localStorage.removeItem('tareas') // Elimina las tareas del localStorage
-      this.loadTareasFromLocalStorage() // Recarga las tareas desde la fuente original
+      // Elimina las tareas del localStorage
+      localStorage.removeItem('tareas')
+
+      // Recarga las tareas desde la fuente original y restablece el estado local
+      this.tareas = this.$i18n.messages[this.$i18n.locale].recommendations.map((tarea) => ({
+        ...tarea,
+        completada: false, // Resetea el estado de completado
+        mostrarContenido: false // Colapsa el contenido adicional
+      }))
+
+      // Reinicia también el switch de tareas de Wordpress
+      this.mostrarWordpressTareas = false
     }
   },
   mounted() {

@@ -3,7 +3,9 @@
     <div class="container">
       <div class="card">
         <div class="card-body p-md-5">
-          <h1 class="bd-title mb-4 display-5 text-center">{{ $t('principios.titulo') }}</h1>
+          <h1 class="bd-title mb-4 display-5 text-center">
+            <i class="bi bi-balloon-heart"></i> {{ $t('principios.titulo') }}
+          </h1>
           <p class="bd-lead text-muted text-center mb-4">
             {{ $t('principios.introduccion') }}
             <strong>{{ $t('principios.comunidad') }}</strong>

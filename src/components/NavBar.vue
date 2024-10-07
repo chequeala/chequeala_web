@@ -55,6 +55,7 @@ export default {
 }
 .navbar .navbar-brand {
   color: var(--vt-blue);
+  text-decoration: none;
 }
 .navbar .navbar-brand i {
   color: var(--vt-purple-soft);
