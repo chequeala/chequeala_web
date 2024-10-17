@@ -21,6 +21,8 @@ import PreguntasFrecuentes from '@/components/home/PreguntasFrecuentes.vue'
               role="button"
               >{{ $t('home.signalButtonText') }}<i class="bi bi-signal ms-2"></i
             ></a>
+            <br />
+            <a href="#" class="btn btn-link btn-sm link-underline-light mx-3">Más sobre Signal</a>
           </div>
         </div>
         <div class="col-md-6">
@@ -47,7 +49,7 @@ import PreguntasFrecuentes from '@/components/home/PreguntasFrecuentes.vue'
             <div class="card-body">
               <i class="bi bi-diagram-3"></i>
               <h4>
-                <a href="https://veni.chequea.la" target="_blank" class="stretched-link">{{
+                <a href="https://veni.chequea.la" class="stretched-link">{{
                   $t('home.veniOSINT')
                 }}</a>
               </h4>

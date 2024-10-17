@@ -3,7 +3,7 @@
     <div class="container py-1 d-flex align-items-center">
       <div class="text-start">
         <a class="navbar-brand fw-bold fs-3 me-0" href="/">
-          <i class="bi bi-search-heart pe-2"></i>{{ $t('navbar.brand') }}
+          <i class="bi bi-search-heart pe-2 d-inline-block rotate"></i>{{ $t('navbar.brand') }}
         </a>
         <form class="form-inline d-inline-flex form-select-xs">
           <select
@@ -56,9 +56,19 @@ export default {
 .navbar .navbar-brand {
   color: var(--vt-blue);
   text-decoration: none;
+  transition-duration: 0.3s;
 }
 .navbar .navbar-brand i {
   color: var(--vt-purple-soft);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar .navbar-brand:hover {
+  color: var(--vt-purple-soft);
+}
+.navbar .navbar-brand:hover .rotate {
+  transition: 0.3s;
+  transform: rotate(-10deg);
 }
 
 .form-control-sm {
