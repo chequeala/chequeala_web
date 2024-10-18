@@ -15,7 +15,7 @@
   "recommendations": [
     {
       "id": 1,
-      "titulo": "Hacer una copia de seguridad regular",
+      "titulo": "Haz una copia de seguridad regularmente",
       "descripcion": "Asegúrate de que tu sitio web realice copias de seguridad de manera regular para evitar la pérdida de datos.",
       "detalles": "Haz una copia de seguridad diaria o semanal dependiendo del contenido actualizado.",
       "tips": [
