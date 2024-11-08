@@ -19,7 +19,7 @@
       "descripcion": "Asegúrate de que tu sitio web realice copias de seguridad de manera regular para evitar la pérdida de datos.",
       "detalles": "Haz una copia de seguridad diaria o semanal dependiendo del contenido actualizado.",
       "tips": [
-        "Asegurate de tener actualizados tus temas, plugins y el core de tu sitio web.",
+        "Asegurate de tener actualizado tu sitio web.",
         "Usa un plugin confiable para backups.",
         "Almacena copias de seguridad en un lugar seguro.",
         "Verifica periódicamente las copias de seguridad.",
@@ -35,21 +35,21 @@
     {
       "id": 2,
       "titulo": "Usa contraseñas fuertes",
-      "descripcion": "Utiliza contraseñas fuertes y únicas para las cuentas de administrador y usuario.",
+      "descripcion": "Utiliza contraseñas fuertes y únicas para las cuentas de administradores y usuarios.",
       "detalles": "Una contraseña segura debe incluir una combinación de letras, números y caracteres especiales.",
       "tips": [
         "Utiliza un administrador de contraseñas.",
         "Cambia tus contraseñas regularmente.",
-        "No uses la misma contraseña en diferentes sitios."
+        "Usa una contraseña por cada cuenta que tengas."
       ],
       "enlaces": [
         {
-          "url": "https://example.com/strong-passwords",
+          "url": "https://protege.la/blog-contenido/es-momento-de-elegir-contrasenas-nuevas-y-seguras/",
           "texto": "Consejos para contraseñas fuertes"
         },
         {
-          "url": "https://example.com/password-managers",
-          "texto": "Administradores de contraseñas"
+          "url": "https://bitwarden.com/",
+          "texto": "Bitwarden: administrador de contraseñas"
         }
       ],
       "isWordpress": false
