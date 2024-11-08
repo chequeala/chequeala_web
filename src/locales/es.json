@@ -19,13 +19,16 @@
       "descripcion": "Asegúrate de que tu sitio web realice copias de seguridad de manera regular para evitar la pérdida de datos.",
       "detalles": "Haz una copia de seguridad diaria o semanal dependiendo del contenido actualizado.",
       "tips": [
+        "Asegurate de tener actualizados tus temas, plugins y el core de tu sitio web.",
         "Usa un plugin confiable para backups.",
         "Almacena copias de seguridad en un lugar seguro.",
-        "Verifica periódicamente las copias de seguridad."
+        "Verifica periódicamente las copias de seguridad.",
+        "Revisa si tu servicio de alojamiento ofrece servicio de respaldo."
       ],
       "enlaces": [
-        { "url": "https://example.com/backup-tips", "texto": "Más sobre backups" },
-        { "url": "https://example.com/backup-tools", "texto": "Herramientas de respaldo" }
+        { "url": "https://help.dreamhost.com/hc/es/articles/215768237-Respaldar-la-informaci%C3%B3n-de-un-sitio-web-manualmente", "texto": "Como hacer un respaldo manualmente" },
+        { "url": "https://wordpress.org/plugins/duplicator/", "texto": "Plugin de Wordpress duplicator" },
+        { "url": "https://wordpress.org/plugins/updraftplus/", "texto": "Plugin de Wordpress updraft" }
       ],
       "isWordpress": false
     },
