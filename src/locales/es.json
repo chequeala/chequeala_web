@@ -1,9 +1,9 @@
 {
-  "title": "Lista de Tareas de Seguridad Web",
+  "title": "Lista de tareas de seguridad web",
   "exportPdf": "Exportar PDF",
-  "exportPdfTooltip": "Descargar el checklist en formato PDF",
+  "exportPdfTooltip": "Descargar la lista de tareas en formato PDF",
   "reset": "Reiniciar",
-  "resetTooltip": "Reiniciar todas las recomendaciónes",
+  "resetTooltip": "Reiniciar todas las recomendaciones",
 
   "wordpressSwitch": "Mostrar tareas de WordPress",
   "showInfo": "Mostrar material de referencia",
@@ -43,21 +43,17 @@
         "Usa una contraseña por cada cuenta que tengas."
       ],
       "enlaces": [
-        {
-          "url": "https://protege.la/blog-contenido/es-momento-de-elegir-contrasenas-nuevas-y-seguras/",
-          "texto": "Consejos para contraseñas fuertes"
-        },
-        {
-          "url": "https://bitwarden.com/",
-          "texto": "Bitwarden: administrador de contraseñas"
-        }
+        { "url": "https://protege.la/blog-contenido/es-momento-de-elegir-contrasenas-nuevas-y-seguras/",
+          "texto": "Consejos para contraseñas fuertes" },
+        { "url": "https://conexo.org/wp-content/uploads/2023/09/1b.-CONF_-Bitwarden-septiembre-2023.pdf",
+          "texto": "Bitwarden: administrador de contraseñas" }
       ],
       "isWordpress": false
     },
     {
       "id": 3,
       "titulo": "Utiliza un firewall de aplicaciones web",
-      "descripcion": "Implementa un firewall para proteger tu sitio de ataques y amenazas.",
+      "descripcion": "Implementa un firewall para proteger tu sitio ante ataques y amenazas.",
       "detalles": "Un firewall puede bloquear tráfico malicioso y proteger tu sitio de vulnerabilidades conocidas.",
       "tips": [
         "Elige un firewall confiable.",
@@ -65,9 +61,9 @@
         "Monitorea los registros de tráfico."
       ],
       "enlaces": [
-        { "url": "https://example.com/web-firewall", "texto": "Más sobre firewalls" },
+        { "url": "https://www.cloudflare.com/es-es/learning/ddos/glossary/web-application-firewall-waf/", "texto": "Más sobre firewalls" },
         {
-          "url": "https://example.com/firewall-tips",
+          "url": "https://www.dreamhost.com/blog/es/firewall-aplicacione/",
           "texto": "Consejos para configurar un firewall"
         }
       ],
@@ -75,21 +71,21 @@
     },
     {
       "id": 4,
-      "titulo": "Realiza auditorías de seguridad periódicas",
+      "titulo": "Realiza diagnósticos de seguridad periódicas",
       "descripcion": "Revisa regularmente la seguridad de tu sitio para identificar y corregir vulnerabilidades.",
-      "detalles": "Las auditorías pueden detectar problemas de seguridad que podrían ser explotados por atacantes.",
+      "detalles": "Las auditorías pueden detectar problemas de seguridad que podrían ser explotados por atacantes y te ayudarán a tomar acciones para evitar.",
       "tips": [
-        "Contrata a un experto en seguridad.",
+        "¡Contacta a nuestra linea de ayuda¡.",
         "Utiliza herramientas de escaneo de seguridad.",
         "Revisa los informes de auditoría y toma acciones."
       ],
       "enlaces": [
         {
-          "url": "https://example.com/security-audits",
-          "texto": "Más sobre auditorías de seguridad"
+          "url": "https://veni.chequea.la/",
+          "texto": "Vení"
         },
         {
-          "url": "https://example.com/security-scanners",
+          "url": "https://pentest-tools.com/website-vulnerability-scanning/website-scanner",
           "texto": "Herramientas para escanear seguridad"
         }
       ],
@@ -102,16 +98,16 @@
       "detalles": "Los permisos incorrectos pueden permitir a los atacantes modificar o eliminar archivos importantes.",
       "tips": [
         "Establece permisos de archivo adecuados.",
-        "No uses permisos excesivos como 777.",
+        "No uses permisos excesivos como 777 (Lectura, Escritura y Ejecución).",
         "Revisa los permisos regularmente."
       ],
       "enlaces": [
         {
-          "url": "https://example.com/file-permissions",
+          "url": "https://es.siteground.com/kb/permisos-de-archivos-y-carpetas/",
           "texto": "Más sobre permisos de archivos"
         },
         {
-          "url": "https://example.com/server-permissions",
+          "url": "https://kinsta.com/es/blog/permisos-wordpress/",
           "texto": "Configuración de permisos en el servidor"
         }
       ],
@@ -119,8 +115,8 @@
     },
     {
       "id": 6,
-      "titulo": "Desactiva el registro de errores en producción",
-      "descripcion": "No dejes que los errores se registren públicamente en tu sitio en producción.",
+      "titulo": "Desactiva el registro de errores",
+      "descripcion": "No dejes que los errores se registren públicamente en tu sitio.",
       "detalles": "El registro de errores puede exponer información sensible a los atacantes.",
       "tips": [
         "Configura el registro de errores solo en entornos de desarrollo.",
@@ -128,7 +124,7 @@
         "Revisa los registros de errores en un lugar seguro."
       ],
       "enlaces": [
-        { "url": "https://example.com/error-logging", "texto": "Más sobre registro de errores" },
+        { "url": "https://es.semrush.com/blog/codigos-de-estado-http/", "texto": "Más sobre registro de errores" },
         { "url": "https://example.com/error-logs", "texto": "Manejo de registros de errores" }
       ],
       "isWordpress": false
@@ -137,15 +133,15 @@
       "id": 7,
       "titulo": "Implementa autenticación de dos factores (2FA)",
       "descripcion": "Agrega una capa adicional de seguridad a tus cuentas mediante autenticación de dos factores.",
-      "detalles": "La 2FA requiere algo que sabes (contraseña) y algo que tienes (código de autenticación).",
+      "detalles": "La 2FA requiere algo que sabes (contraseña), algo que tienes (código de autenticación, llaves de seguridad) o algo que eres (datos biometricos).",
       "tips": [
         "Habilita 2FA en todas las cuentas importantes.",
         "Usa aplicaciones de autenticación en lugar de SMS.",
         "Mantén tus métodos de 2FA seguros."
       ],
       "enlaces": [
-        { "url": "https://example.com/2fa", "texto": "Más sobre autenticación de dos factores" },
-        { "url": "https://example.com/2fa-apps", "texto": "Aplicaciones de autenticación" }
+        { "url": "https://protege.la/blog-contenido/entendiendo-la-verificacion-en-dos-pasos-2fa-metodos-y-tips/", "texto": "Más sobre autenticación de dos factores" },
+        { "url": "https://www.xataka.com/basics/17-mejores-aplicaciones-verificacion-dos-pasos", "texto": "Aplicaciones de autenticación" }
       ],
       "isWordpress": false
     },
@@ -160,8 +156,8 @@
         "Configura CAPTCHA para una experiencia de usuario óptima."
       ],
       "enlaces": [
-        { "url": "https://example.com/captcha", "texto": "Más sobre CAPTCHA" },
-        { "url": "https://example.com/recaptcha", "texto": "Google reCAPTCHA" }
+        { "url": "https://www.cloudflare.com/es-la/learning/bots/how-captchas-work/", "texto": "Más sobre CAPTCHA" },
+        { "url": "https://www.isitwp.com/es/add-google-recaptcha-contact-form/", "texto": "Configurar Google reCAPTCHA en un formulario" }
       ],
       "isWordpress": false
     },
