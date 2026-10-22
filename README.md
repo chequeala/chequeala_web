@@ -8,7 +8,7 @@ Puedes acceder al proyecto en: [https://chequea.la](https://chequea.la)
 
 ## Descripción del Proyecto
 
-Chequea.la proporciona un **checklist interactivo** que permite a los propietarios de sitios web verificar y mejorar la seguridad de sus sitios. La herramienta está diseñada para ser fácil de usar y ofrecer recomendaciones específicas para sitios web generales y sitios hechos en WordPress.
+chequea.la proporciona un **checklist interactivo** que permite a los propietarios de sitios web verificar y mejorar la seguridad de sus sitios. La herramienta está diseñada para ser fácil de usar y ofrecer recomendaciones específicas para sitios web generales y sitios hechos en WordPress.
 
 ## Herramientas
 

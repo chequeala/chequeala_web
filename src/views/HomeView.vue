@@ -72,6 +72,12 @@ const pasos = ['step1', 'step2', 'step3']
               {{ copiado ? $t('home.copied') : $t('home.copyEmail') }}
             </button>
           </p>
+          <p class="small text-soft mt-2 mb-0">
+            <i class="bi bi-key me-1"></i>{{ $t('home.pgpHint') }}
+            <RouterLink :to="{ path: '/principios', hash: '#pgp' }">{{
+              $t('home.pgpLink')
+            }}</RouterLink>
+          </p>
         </div>
         <div class="col-lg-6">
           <img class="img-fluid" src="@/assets/error-web.svg" alt="" width="866" height="683" />

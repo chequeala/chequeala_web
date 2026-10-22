@@ -309,7 +309,7 @@
     }
   ],
   "navbar": {
-    "brand": "Chequea.la",
+    "brand": "chequea.la",
     "description": "Atendemos incidentes web de organizaciones en Latinoamérica.",
     "languages": {
       "es": "Español",
@@ -328,6 +328,18 @@
     "translateText": "¿Hablas otro idioma? Ayúdanos a traducir chequea.la.",
     "translateLink": "Colabora en Crowdin"
   },
+  "titles": {
+    "inicio": "Atención a incidentes web en Latinoamérica",
+    "checklist": "Lista de tareas de seguridad web",
+    "recursos": "Recursos",
+    "principios": "Nuestros principios",
+    "noEncontrada": "Página no encontrada"
+  },
+  "notFound": {
+    "titulo": "No encontramos esta página",
+    "descripcion": "Es posible que el enlace esté roto o que la página se haya movido.",
+    "volver": "Volver al inicio"
+  },
   "comingSoon": {
     "tituloDestacado": "¡Estamos mejorando!",
     "titulo": "Vuelve pronto para más seguridad web.",
@@ -336,12 +348,12 @@
   },
   "principios": {
     "titulo": "Nuestros Principios",
-    "introduccion": "En Chequea.la, nuestra misión es clara: somos una línea de ayuda dedicada a atender incidentes web que afectan a personas defensoras de derechos humanos, periodistas, colectivos, movimientos sociales, medios y organizaciones en Latinoamérica.",
+    "introduccion": "En chequea.la, nuestra misión es clara: somos una línea de ayuda dedicada a atender incidentes web que afectan a personas defensoras de derechos humanos, periodistas, colectivos, movimientos sociales, medios y organizaciones en Latinoamérica.",
     "comunidad": "Somos un proyecto de la comunidad latinoamericana para la comunidad latinoamericana.",
     "quienes_somos": {
       "titulo": "Quiénes somos",
       "linea_ayuda": "Una línea de ayuda especializada:",
-      "descripcion": "Chequea.la fue creada para brindar una respuesta especializada a incidentes web, diseñada por quienes conocen y viven los desafíos digitales en nuestra región.",
+      "descripcion": "chequea.la fue creada para brindar una respuesta especializada a incidentes web, diseñada por quienes conocen y viven los desafíos digitales en nuestra región.",
       "enfoque_regional": "Enfoque regional:",
       "enfoque_regional_desc": "Entendemos las particularidades de la región, donde las represalias digitales y la censura son comunes."
     },
@@ -363,7 +375,7 @@
     },
     "herramientas_contacto": {
       "titulo": "Nuestras herramientas de contacto",
-      "descripcion": "En Chequea.la, la seguridad en las comunicaciones es fundamental. Por esta razón, nuestro canal de contacto es el correo electrónico.",
+      "descripcion": "En chequea.la, la seguridad en las comunicaciones es fundamental. Por esta razón, nuestro canal de contacto es el correo electrónico.",
       "correo": "Correo electrónico:",
       "correo_desc": "Escríbenos a {email}.",
       "proceso_comunicacion": "Correo cifrado con PGP (opcional):",
@@ -371,7 +383,7 @@
       "pgp_descargar": "Descargar llave pública",
       "pgp_huella": "Huella"
     },
-    "cita": "Chequea.la es una red de apoyo creada por y para la comunidad latinoamericana, protegiendo nuestra presencia en línea con solidaridad, compromiso y las herramientas más seguras disponibles."
+    "cita": "chequea.la es una red de apoyo creada por y para la comunidad latinoamericana, protegiendo nuestra presencia en línea con solidaridad, compromiso y las herramientas más seguras disponibles."
   },
 
   "home": {
@@ -383,6 +395,8 @@
     "orWriteTo": "o escríbenos a",
     "copyEmail": "Copiar correo",
     "copied": "¡Copiado!",
+    "pgpHint": "¿Prefieres cifrar tu mensaje?",
+    "pgpLink": "Usa nuestra llave PGP (opcional)",
     "servicesTitle": "¿Cómo podemos ayudarte?",
     "checkListDesc": "Revisa paso a paso las buenas prácticas de seguridad para tu sitio web y WordPress.",
     "veniDesc": "Conoce la información pública de tu sitio: DNS, certificados, cabeceras y más.",
@@ -401,7 +415,7 @@
     "resources": "Recursos",
     "principles": "Nuestros Principios",
     "faqTitle": "Preguntas frecuentes",
-    "faqDescription": "En Chequea.la, sabemos que la seguridad digital es crucial para quienes defienden los derechos humanos y la libertad de expresión en línea. A continuación, respondemos algunas de las preguntas más comunes sobre nuestra línea de ayuda, cómo funcionamos y quiénes somos.",
+    "faqDescription": "En chequea.la, sabemos que la seguridad digital es crucial para quienes defienden los derechos humanos y la libertad de expresión en línea. A continuación, respondemos algunas de las preguntas más comunes sobre nuestra línea de ayuda, cómo funcionamos y quiénes somos.",
     "faq": [
       {
         "question": "¿Cómo lo hacemos?",
@@ -442,25 +456,25 @@
     "items": [
       {
         "organizacion": "People in Need América Latina",
-        "mensaje": "El aporte a nuestros beneficiarios y aliados claves es invaluable. Gracias al equipo de Chequea.la contamos con plataformas web seguras...",
+        "mensaje": "El aporte a nuestros beneficiarios y aliados claves es invaluable. Gracias al equipo de chequea.la contamos con plataformas web seguras...",
         "autor": "PIN",
         "fecha": "Agosto 2024"
       },
       {
         "organizacion": "PostData Nicaragua",
-        "mensaje": "PostData Nicaragua está lista para avanzar en la cobertura mediática. Gracias al equipo de Chequea.la contamos con un sitio web seguro...",
+        "mensaje": "PostData Nicaragua está lista para avanzar en la cobertura mediática. Gracias al equipo de chequea.la contamos con un sitio web seguro...",
         "autor": "PostData",
         "fecha": "Agosto 2024"
       },
       {
         "organizacion": "FLED",
-        "mensaje": "Chequea.la es un recurso esencial, oportuno y necesario, proporcionando prevención y respuesta a incidentes...",
+        "mensaje": "chequea.la es un recurso esencial, oportuno y necesario, proporcionando prevención y respuesta a incidentes...",
         "autor": "FLED",
         "fecha": "Agosto 2024"
       },
       {
         "organizacion": "NICASEC",
-        "mensaje": "Chequea.la para NICASEC es un aliado invaluable, una herramienta de prevención, atención y recuperación...",
+        "mensaje": "chequea.la para NICASEC es un aliado invaluable, una herramienta de prevención, atención y recuperación...",
         "autor": "NICASEC",
         "fecha": "Agosto 2024"
       },
@@ -472,7 +486,7 @@
       },
       {
         "organizacion": "Nicaragua Investiga",
-        "mensaje": "Gracias al apoyo del equipo de Chequea.la nuestro sitio web se encuentra funcionando de manera óptima...",
+        "mensaje": "Gracias al apoyo del equipo de chequea.la nuestro sitio web se encuentra funcionando de manera óptima...",
         "autor": "Nicaragua Investiga",
         "fecha": "Septiembre 2024"
       },

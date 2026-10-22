@@ -1,0 +1,14 @@
+{
+  "name": "chequea.la",
+  "short_name": "chequea.la",
+  "description": "Línea de ayuda para incidentes web en Latinoamérica",
+  "lang": "es",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f1f6f1",
+  "theme_color": "#804fdc",
+  "icons": [
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

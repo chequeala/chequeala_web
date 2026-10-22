@@ -80,7 +80,7 @@ import { CONTACT_EMAIL, PGP_KEY_URL, PGP_FINGERPRINT } from '@/config'
               <strong>{{ $t('principios.herramientas_contacto.correo') }}</strong>
               {{ $t('principios.herramientas_contacto.correo_desc', { email: CONTACT_EMAIL }) }}
             </li>
-            <li class="mb-3">
+            <li id="pgp" class="mb-3">
               <i class="bi bi-envelope-fill text-primary"></i>
               <strong>{{ $t('principios.herramientas_contacto.proceso_comunicacion') }}</strong>
               {{ $t('principios.herramientas_contacto.proceso_comunicacion_desc') }}
