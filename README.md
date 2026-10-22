@@ -37,7 +37,7 @@ Además, ofrece recomendaciones específicas para sitios hechos en WordPress, in
 - **Feedback**: Comparte tus comentarios y sugerencias para mejorar la herramienta.
 - **Traducción**: Ayúdanos a traducir el proyecto a otros idiomas. Puedes hacerlo a través de nuestra plataforma de traducción en Crowdin: [https://crowdin.com/project/chequeala](https://crowdin.com/project/chequeala).
 
-Si estás interesado en colaborar, por favor abre un **issue** o envía un **pull request**. Para cualquier consulta, no dudes en contactarnos a través de nuestro correo electrónico seguro: `info [at] chequea [dot] la`.
+Si estás interesado en colaborar, por favor abre un **issue** o envía un **pull request**. Para cualquier consulta, escríbenos a `chequeala [at] tuta [dot] io`. Si quieres, puedes cifrar tu mensaje con nuestra [llave PGP](https://chequea.la/chequeala.asc) (opcional).
 
 ## Configuración del Proyecto
 
@@ -69,3 +69,20 @@ npm run build
 ```sh
 npm run lint
 ```
+
+## Despliegue
+
+El sitio se publica en **Netlify** y se despliega automáticamente con cada push a `main`. El dominio `chequea.la` pasa por **Deflect** (protección contra ataques), cuyo origen apunta a Netlify (`75.2.60.5`).
+
+- `netlify.toml`: comando de build, carpeta `dist/` y versión de Node.
+- `public/_redirects`: redirección SPA para que las rutas funcionen al recargar.
+- `public/_headers`: cabeceras de seguridad (CSP, HSTS, etc.) y caché.
+
+Si tras un despliegue `chequea.la` muestra la versión anterior pero `chequeala.netlify.app` ya tiene la nueva, es la caché de Deflect: espera unos minutos o púrgala desde su panel.
+
+## Mantenimiento
+
+- **`public/.well-known/security.txt`**: el campo `Expires` vence el **21 de octubre de 2027**. Renuévalo (máximo un año a futuro) antes de esa fecha.
+- **Llave PGP**: si se cambia, reemplaza `public/chequeala.asc` y actualiza `PGP_FINGERPRINT` en `src/config.js`.
+- **Correo de contacto**: se cambia solo en `src/config.js` (`CONTACT_EMAIL`) y en `security.txt`.
+- **CSP**: si se agrega un script, fuente o imagen de otro dominio, hay que permitirlo en `public/_headers` o el navegador lo bloqueará.
