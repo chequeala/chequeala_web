@@ -386,9 +386,9 @@
     },
     "herramientas_contacto": {
       "titulo": "Nossas ferramentas de contato",
-      "descripcion": "Na Chequea.la, a segurança nas comunicações é fundamental. Por isso, usamos o Signal como nossa principal ferramenta.",
-      "why_signal": "Por que Signal?:",
-      "why_signal_desc": "O Signal é um aplicativo criptografado de ponta a ponta, reconhecido por sua segurança e privacidade.",
+      "descripcion": "Na Chequea.la, a segurança nas comunicações é fundamental. Por isso, nosso canal de contato é o e-mail.",
+      "correo": "E-mail:",
+      "correo_desc": "Escreva para {email}.",
       "proceso_comunicacion": "Processo de comunicação:",
       "proceso_comunicacion_desc": "Oferecemos a possibilidade de usar e-mail criptografado PGP para maior segurança."
     },
@@ -397,9 +397,8 @@
   "home": {
     "headerTitle": "Problemas com seu site?",
     "headerDescription1": "Se você defende os direitos humanos na América Latina, estamos aqui para ajudar.",
-    "headerDescription2": " Sua organização ou coletivo está enfrentando um incidente em sua plataforma web? Escreva para nossa linha de ajuda pelo Signal e juntaremos esforços para resolver isso.",
-    "signalLink": "https://signal.me/#p/+16312974614",
-    "signalButtonText": "Solicitar ajuda na linha Signal",
+    "headerDescription2": " Sua organização ou coletivo está enfrentando um incidente em sua plataforma web? Escreva para nossa linha de ajuda por e-mail e juntaremos esforços para resolver isso.",
+    "contactButtonText": "Solicitar ajuda por e-mail",
     "checkList": "Check List",
     "veniOSINT": "Veni OSINT",
     "resources": "Recursos",
@@ -410,7 +409,7 @@
       {
         "question": "Como fazemos isso?",
         "answer": [
-          "Através do nosso número do Signal. Escreva para nós clicando no botão azul abaixo do nosso logo.",
+          "Através do nosso e-mail. Escreva para nós clicando no botão azul abaixo do nosso logo.",
           "Explique na nossa linha de ajuda, detalhadamente, o incidente relacionado ao mau funcionamento ou à vulneração da plataforma web.",
           "Inclua a data e hora em que ocorreu o incidente, bem como qualquer contexto relevante.",
           "Considere as últimas ações tomadas pelas pessoas com acesso ao site antes do ataque, como a instalação de programas piratas ou cliques em links enviados por contatos desconhecidos. Toda informação é útil."

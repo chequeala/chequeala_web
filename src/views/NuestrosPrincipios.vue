@@ -1,3 +1,7 @@
+<script setup>
+import { CONTACT_EMAIL } from '@/config'
+</script>
+
 <template>
   <div class="container-fluid green-section py-5">
     <div class="container">
@@ -73,9 +77,9 @@
           </p>
           <ul class="list-unstyled">
             <li class="mb-3">
-              <i class="bi bi-chat-dots-fill text-info"></i>
-              <strong>{{ $t('principios.herramientas_contacto.why_signal') }}</strong>
-              {{ $t('principios.herramientas_contacto.why_signal_desc') }}
+              <i class="bi bi-envelope-at-fill text-info"></i>
+              <strong>{{ $t('principios.herramientas_contacto.correo') }}</strong>
+              {{ $t('principios.herramientas_contacto.correo_desc', { email: CONTACT_EMAIL }) }}
             </li>
             <li class="mb-3">
               <i class="bi bi-envelope-fill text-primary"></i>

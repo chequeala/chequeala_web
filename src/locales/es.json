@@ -356,9 +356,9 @@
     },
     "herramientas_contacto": {
       "titulo": "Nuestras herramientas de contacto",
-      "descripcion": "En Chequea.la, la seguridad en las comunicaciones es fundamental. Por esta razón, usamos Signal como nuestra herramienta principal.",
-      "why_signal": "¿Por qué Signal?:",
-      "why_signal_desc": "Signal es una aplicación cifrada de extremo a extremo, reconocida por su seguridad y privacidad.",
+      "descripcion": "En Chequea.la, la seguridad en las comunicaciones es fundamental. Por esta razón, nuestro canal de contacto es el correo electrónico.",
+      "correo": "Correo electrónico:",
+      "correo_desc": "Escríbenos a {email}.",
       "proceso_comunicacion": "Proceso de comunicación:",
       "proceso_comunicacion_desc": "Ofrecemos la posibilidad de usar correo electrónico cifrado PGP para mayor seguridad."
     },
@@ -368,9 +368,8 @@
   "home": {
     "headerTitle": "¿Problemas con tu sitio web?",
     "headerDescription1": "Si defiendes derechos humanos en Latinoamérica, estamos aquí para ti.",
-    "headerDescription2": "¿Tu organización o colectivo está enfrentando un incidente en su plataforma web? Escríbenos a nuestra línea de ayuda por Signal y sumaremos esfuerzos para resolverlo.",
-    "signalLink": "https://signal.me/#p/+16312974614",
-    "signalButtonText": "Solicitar ayuda en la línea Signal",
+    "headerDescription2": "¿Tu organización o colectivo está enfrentando un incidente en su plataforma web? Escríbenos a nuestra línea de ayuda por correo electrónico y sumaremos esfuerzos para resolverlo.",
+    "contactButtonText": "Solicitar ayuda por correo",
     "checkList": "Check List",
     "veniOSINT": "Veni OSINT",
     "resources": "Recursos",
@@ -381,7 +380,7 @@
       {
         "question": "¿Cómo lo hacemos?",
         "answer": [
-          "A través de nuestro número de Signal. Escríbenos dando clic en el botón azul debajo de nuestro logo.",
+          "A través de nuestro correo electrónico. Escríbenos dando clic en el botón azul debajo de nuestro logo.",
           "Explica en nuestra línea de ayuda, detalladamente, el incidente relacionado con el mal funcionamiento o la vulneración de la plataforma web.",
           "Incluye la fecha y hora en que ocurrió el incidente, así como cualquier contexto relevante.",
           "Toma en cuenta las últimas acciones que tomaron las personas con acceso al sitio antes del ataque, por ejemplo, instalación de programas piratas o clics a links enviados por contactos desconocidos. Todo dato es útil."

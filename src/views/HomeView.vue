@@ -1,6 +1,7 @@
 <script setup>
 import SectionTestimonios from '@/components/home/SectionTestimonios.vue'
 import PreguntasFrecuentes from '@/components/home/PreguntasFrecuentes.vue'
+import { CONTACT_EMAIL } from '@/config'
 </script>
 
 <template>
@@ -17,12 +18,11 @@ import PreguntasFrecuentes from '@/components/home/PreguntasFrecuentes.vue'
             </p>
             <a
               class="btn btn-primary text-white rounded-5 px-4 py-2"
-              :href="$t('home.signalLink')"
+              :href="`mailto:${CONTACT_EMAIL}`"
               role="button"
-              >{{ $t('home.signalButtonText') }}<i class="bi bi-signal ms-2"></i
+              >{{ $t('home.contactButtonText') }}<i class="bi bi-envelope ms-2"></i
             ></a>
-            <br />
-            <a href="#" class="btn btn-link btn-sm link-underline-light mx-3">Más sobre Signal</a>
+            <p class="small fw-light mt-2 mx-3">{{ CONTACT_EMAIL }}</p>
           </div>
         </div>
         <div class="col-md-6">
