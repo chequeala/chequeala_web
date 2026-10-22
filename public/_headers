@@ -9,3 +9,6 @@
 
 /chequeala.asc
   Content-Type: application/pgp-keys
+
+/site.webmanifest
+  Content-Type: application/manifest+json
