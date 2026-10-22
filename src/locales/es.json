@@ -366,8 +366,10 @@
       "descripcion": "En Chequea.la, la seguridad en las comunicaciones es fundamental. Por esta razón, nuestro canal de contacto es el correo electrónico.",
       "correo": "Correo electrónico:",
       "correo_desc": "Escríbenos a {email}.",
-      "proceso_comunicacion": "Proceso de comunicación:",
-      "proceso_comunicacion_desc": "Ofrecemos la posibilidad de usar correo electrónico cifrado PGP para mayor seguridad."
+      "proceso_comunicacion": "Correo cifrado con PGP:",
+      "proceso_comunicacion_desc": "Si necesitas mayor seguridad, cifra tu mensaje con nuestra llave pública PGP.",
+      "pgp_descargar": "Descargar llave pública",
+      "pgp_huella": "Huella"
     },
     "cita": "Chequea.la es una red de apoyo creada por y para la comunidad latinoamericana, protegiendo nuestra presencia en línea con solidaridad, compromiso y las herramientas más seguras disponibles."
   },

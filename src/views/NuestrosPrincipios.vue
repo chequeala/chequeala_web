@@ -1,5 +1,5 @@
 <script setup>
-import { CONTACT_EMAIL } from '@/config'
+import { CONTACT_EMAIL, PGP_KEY_URL, PGP_FINGERPRINT } from '@/config'
 </script>
 
 <template>
@@ -84,6 +84,20 @@ import { CONTACT_EMAIL } from '@/config'
               <i class="bi bi-envelope-fill text-primary"></i>
               <strong>{{ $t('principios.herramientas_contacto.proceso_comunicacion') }}</strong>
               {{ $t('principios.herramientas_contacto.proceso_comunicacion_desc') }}
+              <div class="pgp-box mt-2">
+                <a
+                  :href="PGP_KEY_URL"
+                  download="chequeala.asc"
+                  class="btn btn-sm btn-outline-brand rounded-pill"
+                >
+                  <i class="bi bi-key-fill"></i
+                  >{{ $t('principios.herramientas_contacto.pgp_descargar') }}
+                </a>
+                <div class="small mt-2">
+                  {{ $t('principios.herramientas_contacto.pgp_huella') }}:
+                  <code class="fingerprint">{{ PGP_FINGERPRINT }}</code>
+                </div>
+              </div>
             </li>
           </ul>
 
@@ -116,5 +130,14 @@ h1 {
 
 i {
   margin-right: 8px;
+}
+
+.pgp-box {
+  margin-left: 1.6rem;
+}
+.fingerprint {
+  color: var(--ink);
+  white-space: normal;
+  word-spacing: 0.15em;
 }
 </style>
