@@ -33,8 +33,7 @@ import { CONTACT_EMAIL } from '@/config'
             </div>
 
             <div class="col-md-6">
-              <!-- Placeholder image -->
-              <img src="@/assets/team.svg" alt="Placeholder" class="img-fluid" />
+              <img src="@/assets/team.svg" alt="" class="img-fluid" />
             </div>
           </div>
 
@@ -108,8 +107,11 @@ li {
   border-radius: 0.75rem;
 }
 
+.card {
+  box-shadow: var(--shadow);
+}
 h1 {
-  color: #804fdc;
+  color: var(--vt-purple-deep);
 }
 
 i {

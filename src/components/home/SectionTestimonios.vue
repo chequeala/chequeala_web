@@ -4,88 +4,71 @@ export default {
     testimonios() {
       return this.$i18n.messages[this.$i18n.locale].testimonios.items
     }
-  },
-  methods: {
-    // Esta función divide el array de testimonios en grupos de tres
-    dividirEnGrupos(arr, tamañoGrupo) {
-      let grupos = []
-      for (let i = 0; i < arr.length; i += tamañoGrupo) {
-        grupos.push(arr.slice(i, i + tamañoGrupo))
-      }
-      return grupos
-    }
   }
 }
 </script>
 
 <template>
-  <div class="container-fluid green-section pt-5 pb-3">
-    <section id="testimonios" class="container">
-      <h3 class="text-center mb-4">{{ $t('testimonios.titulo') }}</h3>
+  <div class="container-fluid green-section">
+    <section id="testimonios" class="container" aria-labelledby="testimonios-titulo">
+      <h2 id="testimonios-titulo" class="section-title text-center mb-5">
+        {{ $t('testimonios.titulo') }}
+      </h2>
 
-      <div id="carouselExample" class="carousel carousel-dark slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div
-            v-for="(grupo, index) in dividirEnGrupos(testimonios, 3)"
-            :key="index"
-            :class="['carousel-item', { active: index === 0 }]"
-          >
-            <div class="row row-cols-1 row-cols-md-3 g-5">
-              <div v-for="(testimonio, i) in grupo" :key="i" class="col">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title">{{ testimonio.organizacion }}</h5>
-                    <figure class="card-text">
-                      <blockquote>
-                        <p>{{ testimonio.mensaje }}</p>
-                      </blockquote>
-                      <figcaption class="blockquote-footer text-end">
-                        <cite title="Source Title">{{ testimonio.autor }}</cite>
-                      </figcaption>
-                    </figure>
-                  </div>
-                  <div class="card-footer text-end">
-                    <small class="text-body-secondary">{{ testimonio.fecha }}</small>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div class="testimonios-track">
+        <figure v-for="testimonio in testimonios" :key="testimonio.organizacion" class="card h-100">
+          <div class="card-body p-4 d-flex flex-column">
+            <i class="bi bi-quote quote-icon" aria-hidden="true"></i>
+            <blockquote class="flex-grow-1 mb-3">
+              <p class="mb-0">{{ testimonio.mensaje }}</p>
+            </blockquote>
+            <figcaption class="d-flex justify-content-between align-items-end gap-2">
+              <cite class="fw-bold">{{ testimonio.organizacion }}</cite>
+              <small class="text-soft text-nowrap">{{ testimonio.fecha }}</small>
+            </figcaption>
           </div>
-        </div>
-      </div>
-
-      <div class="text-center">
-        <button
-          class="btn mt-1"
-          type="button"
-          data-bs-target="#carouselExample"
-          data-bs-slide="prev"
-        >
-          <i class="bi bi-arrow-left-short"></i>
-          <span class="visually-hidden">{{ $t('testimonios.anterior') }}</span>
-        </button>
-        <button
-          class="btn mt-1"
-          type="button"
-          data-bs-target="#carouselExample"
-          data-bs-slide="next"
-        >
-          <i class="bi bi-arrow-right-short"></i>
-          <span class="visually-hidden">{{ $t('testimonios.siguiente') }}</span>
-        </button>
+        </figure>
       </div>
     </section>
   </div>
 </template>
 
 <style scoped>
-#testimonios .card-title {
-  color: var(--vt-blue);
+#testimonios {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
 }
-#testimonios button {
-  color: var(--vt-purple);
+.testimonios-track {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
-#testimonios button:hover {
+.card {
+  margin: 0;
+  border: none;
+  border-radius: var(--radius);
+}
+.quote-icon {
+  font-size: 2.5rem;
+  line-height: 1;
   color: var(--vt-purple-soft);
+}
+cite {
+  font-style: normal;
+  color: var(--vt-blue-deep);
+}
+
+/* En móvil: carrusel deslizable */
+@media (max-width: 767.98px) {
+  .testimonios-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+  }
+  .testimonios-track > .card {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+  }
 }
 </style>

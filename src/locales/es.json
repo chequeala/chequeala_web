@@ -75,7 +75,7 @@
       "descripcion": "Revisa regularmente la seguridad de tu sitio para identificar y corregir vulnerabilidades.",
       "detalles": "Las auditorías pueden detectar problemas de seguridad que podrían ser explotados por atacantes y te ayudarán a tomar acciones para evitar.",
       "tips": [
-        "¡Contacta a nuestra linea de ayuda¡.",
+        "¡Contacta a nuestra línea de ayuda!",
         "Utiliza herramientas de escaneo de seguridad.",
         "Revisa los informes de auditoría y toma acciones."
       ],
@@ -314,12 +314,19 @@
     "languages": {
       "es": "Español",
       "pt": "Portugués"
-    }
+    },
+    "contact": "Pedir ayuda",
+    "menu": "Abrir menú",
+    "language": "Idioma"
   },
   "footer": {
     "part1": "Este es un proyecto de la comunidad",
     "part2": "para la comunidad",
-    "highlight": "latinoamericana"
+    "highlight": "latinoamericana",
+    "explore": "Explora",
+    "contactTitle": "Contacto",
+    "translateText": "¿Hablas otro idioma? Ayúdanos a traducir chequea.la.",
+    "translateLink": "Colabora en Crowdin"
   },
   "comingSoon": {
     "tituloDestacado": "¡Estamos mejorando!",
@@ -369,7 +376,24 @@
     "headerTitle": "¿Problemas con tu sitio web?",
     "headerDescription1": "Si defiendes derechos humanos en Latinoamérica, estamos aquí para ti.",
     "headerDescription2": "¿Tu organización o colectivo está enfrentando un incidente en su plataforma web? Escríbenos a nuestra línea de ayuda por correo electrónico y sumaremos esfuerzos para resolverlo.",
+    "eyebrow": "Línea de ayuda para incidentes web",
     "contactButtonText": "Solicitar ayuda por correo",
+    "orWriteTo": "o escríbenos a",
+    "copyEmail": "Copiar correo",
+    "copied": "¡Copiado!",
+    "servicesTitle": "¿Cómo podemos ayudarte?",
+    "checkListDesc": "Revisa paso a paso las buenas prácticas de seguridad para tu sitio web y WordPress.",
+    "veniDesc": "Conoce la información pública de tu sitio: DNS, certificados, cabeceras y más.",
+    "resourcesDesc": "Guías y materiales para mantener tu sitio web seguro.",
+    "principlesDesc": "Cómo trabajamos y cómo cuidamos tus datos.",
+    "comingSoon": "Próximamente",
+    "stepsTitle": "¿Cómo pedir ayuda?",
+    "step1Title": "Escríbenos",
+    "step1Desc": "Envía un correo a nuestra línea de ayuda describiendo el incidente: qué pasó, cuándo y cualquier contexto relevante.",
+    "step2Title": "Revisamos el incidente",
+    "step2Desc": "Analizamos el problema contigo y trabajamos para recuperar y asegurar tu sitio, pidiendo solo la información necesaria.",
+    "step3Title": "Recibes un informe",
+    "step3Desc": "Al terminar te entregamos un resumen de las acciones tomadas.",
     "checkList": "Check List",
     "veniOSINT": "Veni OSINT",
     "resources": "Recursos",
@@ -380,7 +404,7 @@
       {
         "question": "¿Cómo lo hacemos?",
         "answer": [
-          "A través de nuestro correo electrónico. Escríbenos dando clic en el botón azul debajo de nuestro logo.",
+          "A través de nuestro correo electrónico. Escríbenos dando clic en el botón «Solicitar ayuda por correo».",
           "Explica en nuestra línea de ayuda, detalladamente, el incidente relacionado con el mal funcionamiento o la vulneración de la plataforma web.",
           "Incluye la fecha y hora en que ocurrió el incidente, así como cualquier contexto relevante.",
           "Toma en cuenta las últimas acciones que tomaron las personas con acceso al sitio antes del ataque, por ejemplo, instalación de programas piratas o clics a links enviados por contactos desconocidos. Todo dato es útil."
@@ -401,7 +425,10 @@
       {
         "question": "¿Cómo funciona chequea.la?",
         "answer": [
-          "Atendemos incidentes de seguridad en sitios web de personas defensoras de derechos humanos y medios de comunicación."
+          "Recibimos tu solicitud por correo electrónico y la tratamos de forma confidencial.",
+          "Te pedimos solo la información estrictamente necesaria para entender el incidente.",
+          "Trabajamos contigo para recuperar el sitio y reforzar su seguridad.",
+          "Al terminar te entregamos un informe con las acciones tomadas y destruimos los datos que ya no sean necesarios."
         ]
       }
     ]
@@ -449,7 +476,7 @@
       },
       {
         "organizacion": "RIDHE",
-        "mensaje": "En RIDHE colaborar con cheque.la nos ha ayudado a mejorar nuestra seguridad y sostenibilidad digital como organización. De este modo hemos podido reforzar nuestra presencia web y, por tanto, ampliar nuestra capacidad de trabajo por los Derechos Humanos",
+        "mensaje": "En RIDHE colaborar con chequea.la nos ha ayudado a mejorar nuestra seguridad y sostenibilidad digital como organización. De este modo hemos podido reforzar nuestra presencia web y, por tanto, ampliar nuestra capacidad de trabajo por los Derechos Humanos",
         "autor": "RIDHE",
         "fecha": "Septiembre 2024"
       }

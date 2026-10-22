@@ -1,29 +1,74 @@
 @import './base.css';
+
 #app {
   margin: 0 auto;
-  font-weight: normal;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-footer {
-  color: var(--vt-blue);
-}
-footer span {
-  color: var(--vt-purple-soft);
+#app > main {
+  flex: 1;
 }
 
-/* a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  color: #71c55d;
-  transition: 0.4s;
-  padding: 3px;
-} */
-/* .container,
-.container-xxl,
-.container-xl,
-.container-lg,
-.container-md,
-.container-sm, */
 .container-fluid {
   --bs-gutter-x: none !important;
+}
+
+/* botones de marca */
+.btn-brand {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--vt-purple);
+  --bs-btn-border-color: var(--vt-purple);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--vt-purple-deep);
+  --bs-btn-hover-border-color: var(--vt-purple-deep);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--vt-purple-deep);
+  --bs-btn-active-border-color: var(--vt-purple-deep);
+  --bs-btn-focus-shadow-rgb: 128, 79, 220;
+  font-weight: 600;
+}
+.btn-outline-brand {
+  --bs-btn-color: var(--vt-purple-deep);
+  --bs-btn-border-color: var(--vt-purple-soft);
+  --bs-btn-hover-color: var(--vt-purple-deep);
+  --bs-btn-hover-bg: var(--vt-purple-tint);
+  --bs-btn-hover-border-color: var(--vt-purple);
+  --bs-btn-active-color: var(--vt-purple-deep);
+  --bs-btn-active-bg: var(--vt-purple-tint);
+  --bs-btn-active-border-color: var(--vt-purple);
+  --bs-btn-focus-shadow-rgb: 128, 79, 220;
+  font-weight: 600;
+}
+
+/* encabezados de sección */
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--vt-purple-deep);
+}
+.section-title {
+  font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.2rem);
+  margin-bottom: 0.5rem;
+}
+.text-soft {
+  color: var(--ink-soft);
+}
+
+:focus-visible {
+  outline: 3px solid var(--vt-purple-soft);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
 }

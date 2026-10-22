@@ -1,20 +1,12 @@
 <script setup>
-// import { RouterLink, RouterView } from 'vue-router'
 import NavBar from '@/components/NavBar.vue'
 import MyFooter from './components/MyFooter.vue'
 </script>
 
 <template>
-  <!-- <header>
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/about">About</RouterLink>
-  </header> -->
-
-  <div class="container-fluid text-wrap">
-    <NavBar />
+  <NavBar />
+  <main class="container-fluid text-wrap">
     <RouterView />
-    <MyFooter />
-  </div>
+  </main>
+  <MyFooter />
 </template>
-
-<style scoped></style>

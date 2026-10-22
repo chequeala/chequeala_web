@@ -1,10 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import CheckList from '@/views/CheckList.vue'
-import MasRecursos from '@/views/MasRecursos.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) return savedPosition
+    if (to.hash) return { el: to.hash }
+    return { top: 0 }
+  },
   routes: [
     {
       path: '/',
@@ -14,12 +17,12 @@ const router = createRouter({
     {
       path: '/checklist',
       name: 'checklist',
-      component: CheckList
+      component: () => import('@/views/CheckList.vue')
     },
     {
       path: '/recursos',
       name: 'recursos',
-      component: MasRecursos
+      component: () => import('@/views/MasRecursos.vue')
     },
     {
       path: '/principios',

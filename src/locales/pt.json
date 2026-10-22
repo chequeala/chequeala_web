@@ -344,12 +344,19 @@
     "languages": {
       "es": "Espanhol",
       "pt": "Português"
-    }
+    },
+    "contact": "Pedir ajuda",
+    "menu": "Abrir menu",
+    "language": "Idioma"
   },
   "footer": {
     "part1": "Este é um projeto da comunidade",
     "part2": "para a comunidade",
-    "highlight": "latino-americana"
+    "highlight": "latino-americana",
+    "explore": "Explore",
+    "contactTitle": "Contato",
+    "translateText": "Fala outro idioma? Ajude-nos a traduzir o chequea.la.",
+    "translateLink": "Colabore no Crowdin"
   },
   "comingSoon": {
     "tituloDestacado": "Estamos melhorando!",
@@ -398,7 +405,24 @@
     "headerTitle": "Problemas com seu site?",
     "headerDescription1": "Se você defende os direitos humanos na América Latina, estamos aqui para ajudar.",
     "headerDescription2": " Sua organização ou coletivo está enfrentando um incidente em sua plataforma web? Escreva para nossa linha de ajuda por e-mail e juntaremos esforços para resolver isso.",
+    "eyebrow": "Linha de ajuda para incidentes web",
     "contactButtonText": "Solicitar ajuda por e-mail",
+    "orWriteTo": "ou escreva para",
+    "copyEmail": "Copiar e-mail",
+    "copied": "Copiado!",
+    "servicesTitle": "Como podemos ajudar?",
+    "checkListDesc": "Revise passo a passo as boas práticas de segurança para seu site e WordPress.",
+    "veniDesc": "Conheça as informações públicas do seu site: DNS, certificados, cabeçalhos e mais.",
+    "resourcesDesc": "Guias e materiais para manter seu site seguro.",
+    "principlesDesc": "Como trabalhamos e como cuidamos dos seus dados.",
+    "comingSoon": "Em breve",
+    "stepsTitle": "Como pedir ajuda?",
+    "step1Title": "Escreva para nós",
+    "step1Desc": "Envie um e-mail para nossa linha de ajuda descrevendo o incidente: o que aconteceu, quando e qualquer contexto relevante.",
+    "step2Title": "Analisamos o incidente",
+    "step2Desc": "Analisamos o problema com você e trabalhamos para recuperar e proteger seu site, pedindo apenas as informações necessárias.",
+    "step3Title": "Você recebe um relatório",
+    "step3Desc": "Ao final, entregamos um resumo das ações realizadas.",
     "checkList": "Check List",
     "veniOSINT": "Veni OSINT",
     "resources": "Recursos",
@@ -409,7 +433,7 @@
       {
         "question": "Como fazemos isso?",
         "answer": [
-          "Através do nosso e-mail. Escreva para nós clicando no botão azul abaixo do nosso logo.",
+          "Através do nosso e-mail. Escreva para nós clicando no botão «Solicitar ajuda por e-mail».",
           "Explique na nossa linha de ajuda, detalhadamente, o incidente relacionado ao mau funcionamento ou à vulneração da plataforma web.",
           "Inclua a data e hora em que ocorreu o incidente, bem como qualquer contexto relevante.",
           "Considere as últimas ações tomadas pelas pessoas com acesso ao site antes do ataque, como a instalação de programas piratas ou cliques em links enviados por contatos desconhecidos. Toda informação é útil."
@@ -430,7 +454,10 @@
       {
         "question": "Como funciona a chequea.la?",
         "answer": [
-          "Atendemos incidentes de segurança em sites de defensores de direitos humanos e meios de comunicação."
+          "Recebemos sua solicitação por e-mail e a tratamos de forma confidencial.",
+          "Pedimos apenas as informações estritamente necessárias para entender o incidente.",
+          "Trabalhamos com você para recuperar o site e reforçar sua segurança.",
+          "Ao final, entregamos um relatório com as ações realizadas e destruímos os dados que não forem mais necessários."
         ]
       }
     ]
@@ -478,7 +505,7 @@
       },
       {
         "organizacion": "RIDHE",
-        "mensaje": "En RIDHE colaborar con cheque.la nos ha ayudado a mejorar nuestra seguridad y sostenibilidad digital como organización. De este modo hemos podido reforzar nuestra presencia web y, por tanto, ampliar nuestra capacidad de trabajo por los Derechos Humanos",
+        "mensaje": "En RIDHE colaborar con chequea.la nos ha ayudado a mejorar nuestra seguridad y sostenibilidad digital como organización. De este modo hemos podido reforzar nuestra presencia web y, por tanto, ampliar nuestra capacidad de trabajo por los Derechos Humanos",
         "autor": "RIDHE",
         "fecha": "Septiembre 2024"
       }

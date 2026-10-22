@@ -100,8 +100,6 @@
 </template>
 
 <script>
-import html2pdf from 'html2pdf.js'
-
 export default {
   data() {
     return {
@@ -121,7 +119,8 @@ export default {
     }
   },
   methods: {
-    exportarPDF() {
+    async exportarPDF() {
+      const { default: html2pdf } = await import('html2pdf.js')
       const element = document.querySelector('#checklist-container')
       const opt = {
         margin: 1,
@@ -168,7 +167,10 @@ export default {
           }
         })
       } else {
-        this.tareas = this.$i18n.messages[this.$i18n.locale].recommendations
+        this.tareas = this.$i18n.messages[this.$i18n.locale].recommendations.map((tarea) => ({
+          ...tarea,
+          mostrarContenido: false
+        }))
       }
     },
     // Método para reiniciar las tareas sin confirmación
@@ -187,6 +189,12 @@ export default {
       this.mostrarWordpressTareas = false
     }
   },
+  watch: {
+    // El idioma ya no recarga la página: volvemos a cargar las tareas traducidas
+    '$i18n.locale'() {
+      this.loadTareasFromLocalStorage()
+    }
+  },
   mounted() {
     this.loadTareasFromLocalStorage()
   }
@@ -196,7 +204,7 @@ export default {
 <style scoped>
 .card {
   transition: background-color 0.3s;
-  border-radius: 8px;
+  border-radius: var(--radius);
 }
 .card-body {
   padding: 1.25rem;
@@ -206,6 +214,11 @@ export default {
 }
 .wp-card {
   border: 2px solid var(--vt-blue);
+}
+.card .btn-link {
+  padding-left: 0;
+  color: var(--vt-purple-deep);
+  text-decoration: none;
 }
 .wp-icon-container {
   border-radius: 4px;
