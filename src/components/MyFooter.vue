@@ -17,13 +17,13 @@ import { CONTACT_EMAIL } from '@/config'
           <h2 class="footer-title">{{ $t('footer.explore') }}</h2>
           <ul class="list-unstyled mb-0">
             <li>
-              <RouterLink to="/checklist">{{ $t('home.checkList') }}</RouterLink>
-            </li>
-            <li>
               <a href="https://osint.chequea.la">{{ $t('home.veniOSINT') }}</a>
             </li>
             <li>
               <RouterLink to="/principios">{{ $t('home.principles') }}</RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/checklist">{{ $t('home.checkList') }}</RouterLink>
             </li>
           </ul>
         </div>

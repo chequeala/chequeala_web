@@ -20,13 +20,13 @@
       <div class="collapse navbar-collapse" id="mainNav" ref="collapse">
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2 py-3 py-lg-0">
           <li class="nav-item">
-            <RouterLink class="nav-link" to="/checklist">{{ $t('home.checkList') }}</RouterLink>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="https://osint.chequea.la">{{ $t('home.veniOSINT') }}</a>
           </li>
           <li class="nav-item">
             <RouterLink class="nav-link" to="/principios">{{ $t('home.principles') }}</RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink class="nav-link" to="/checklist">{{ $t('home.checkList') }}</RouterLink>
           </li>
           <li class="nav-item my-2 my-lg-0 ms-lg-2">
             <div

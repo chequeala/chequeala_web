@@ -17,7 +17,6 @@ async function copiarCorreo() {
 }
 
 const servicios = [
-  { icon: 'bi-list-check', title: 'home.checkList', desc: 'home.checkListDesc', to: '/checklist' },
   {
     icon: 'bi-diagram-3',
     title: 'home.veniOSINT',
@@ -30,6 +29,7 @@ const servicios = [
     desc: 'home.principlesDesc',
     to: '/principios'
   },
+  { icon: 'bi-list-check', title: 'home.checkList', desc: 'home.checkListDesc', to: '/checklist' },
   {
     icon: 'bi-collection',
     title: 'home.resources',
