@@ -82,7 +82,7 @@
       "enlaces": [
         {
           "url": "https://veni.chequea.la/",
-          "texto": "Vení"
+          "texto": "OSINT Web"
         },
         {
           "url": "https://pentest-tools.com/website-vulnerability-scanning/website-scanner",
@@ -411,7 +411,7 @@
     "step3Title": "Recibes un informe",
     "step3Desc": "Al terminar te entregamos un resumen de las acciones tomadas.",
     "checkList": "Check List",
-    "veniOSINT": "Veni OSINT",
+    "veniOSINT": "OSINT Web",
     "resources": "Recursos",
     "principles": "Nuestros Principios",
     "faqTitle": "Preguntas frecuentes",
