@@ -22,7 +22,7 @@ const servicios = [
     icon: 'bi-diagram-3',
     title: 'home.veniOSINT',
     desc: 'home.veniDesc',
-    href: 'https://veni.chequea.la'
+    href: 'https://osint.chequea.la'
   },
   {
     icon: 'bi-balloon-heart',

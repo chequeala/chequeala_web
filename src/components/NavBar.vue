@@ -23,7 +23,7 @@
             <RouterLink class="nav-link" to="/checklist">{{ $t('home.checkList') }}</RouterLink>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://veni.chequea.la">{{ $t('home.veniOSINT') }}</a>
+            <a class="nav-link" href="https://osint.chequea.la">{{ $t('home.veniOSINT') }}</a>
           </li>
           <li class="nav-item">
             <RouterLink class="nav-link" to="/principios">{{ $t('home.principles') }}</RouterLink>

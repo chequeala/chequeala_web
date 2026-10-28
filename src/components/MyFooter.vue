@@ -20,7 +20,7 @@ import { CONTACT_EMAIL } from '@/config'
               <RouterLink to="/checklist">{{ $t('home.checkList') }}</RouterLink>
             </li>
             <li>
-              <a href="https://veni.chequea.la">{{ $t('home.veniOSINT') }}</a>
+              <a href="https://osint.chequea.la">{{ $t('home.veniOSINT') }}</a>
             </li>
             <li>
               <RouterLink to="/principios">{{ $t('home.principles') }}</RouterLink>
